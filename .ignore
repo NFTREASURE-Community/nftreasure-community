@@ -19,3 +19,5 @@ assets/
 ## Ignore generated files outside of my control
 
 .devenv.flake.nix
+.devenv/
+.direnv/

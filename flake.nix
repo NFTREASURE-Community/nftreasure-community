@@ -1,6 +1,11 @@
 {
   description = "NFTREASURE";
 
+ nixConfig = {
+    extra-trusted-public-keys = "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=";
+    extra-substituters = "https://devenv.cachix.org";
+  };
+
   inputs = {
     nixpkgs = {
       type = "github";
@@ -14,7 +19,7 @@
       type = "github";
       owner = "NixOS";
       repo = "nixpkgs";
-      ref = "nixos-unstable";
+      ref = "nixpkgs-unstable";
       flake = true;
     };
 
@@ -26,6 +31,14 @@
       flake = true;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
   };
 
   outputs = {

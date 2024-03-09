@@ -151,7 +151,11 @@ in
             };
 
             prettier = {
-              output = "check";
+              check = true;
+              cache = false;
+              list-different = true;
+              color = true;
+              no-bracket-spacing = true;
               write = true;
             };
 

@@ -41,6 +41,8 @@ env:
 
   HUGO_VERSION: 0.123.8
 
+  PAGES_PROJECT_NAME: website-nftreasure-community
+
   WRANGLER_API_TOKEN: ${{ secrets.CLOUDFLARE_WORKERS_TOKEN }}
 
 jobs:
@@ -138,8 +140,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: website-saltlabs-docs-codestream-cli
-          directory: docs/build/html
+          projectName: ${{ env.PAGES_PROJECT_NAME }}
+          directory: public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: preview
 
@@ -150,8 +152,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: website-saltlabs-docs-codestream-cli
-          directory: docs/build/html
+          projectName: ${{ env.PAGES_PROJECT_NAME }}
+          directory: public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           #branch: production
           branch: main # TODO: Cloudflare dasboard has no toggle yet.

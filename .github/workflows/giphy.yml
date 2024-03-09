@@ -48,24 +48,16 @@ jobs:
 
     steps:
       - id: wait_for_pages
-        name: Wait for Cloudflare Pages (${{ matrix.os }}, ${{ matrix.python-version }}, ${{ matrix.poetry-version }})
+        name: Wait for Cloudflare Pages (${{ matrix.os }})
         uses: fountainhead/action-wait-for-check@v1.1.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
-          checkName: Deploy website (${{ matrix.os }}, ${{ matrix.python-version }}, ${{ matrix.poetry-version }})
-
-      - id: wait_for_poetry
-        name: Wait for Poetry (${{ matrix.os }}, ${{ matrix.python-version }}, ${{ matrix.poetry-version }})
-        uses: fountainhead/action-wait-for-check@v1.1.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
-          checkName: Publish Python Project (${{ matrix.os }}, ${{ matrix.python-version }}, ${{ matrix.poetry-version }})
+          checkName: Publish Deploy website (${{ matrix.os }})
 
       - id: pr_comment_thumbs_up
         name: PR Comment (Thumbs Up)
-        if: ${{ steps.wait_for_pages.outputs.conclusion == 'success' && steps.wait_for_poetry.outputs.conclusion == 'success' }}
+        if: ${{ steps.wait_for_pages.outputs.conclusion == 'success' }}
         uses: exercism/pr-commenter-action@v1.4.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -79,7 +71,7 @@ jobs:
 
       - id: pr_comment_thumbs_down
         name: PR Comment (Thumbs Down)
-        if: ${{ steps.wait_for_pages.outputs.conclusion != 'success' || steps.wait_for_poetry.outputs.conclusion != 'success' }}
+        if: ${{ steps.wait_for_pages.outputs.conclusion != 'success' }}
         uses: exercism/pr-commenter-action@v1.4.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

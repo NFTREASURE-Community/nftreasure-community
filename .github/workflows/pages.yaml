@@ -1,0 +1,197 @@
+---
+##################################################
+# Name: pages.yaml
+# Description:
+#   A Workflow that builds a static website using
+#   Hugo before publishing to Cloudflare Pages
+##################################################
+
+name: Pages
+
+on:
+  push:
+    branches:
+      - trunk
+
+  pull_request:
+    branches:
+      - trunk
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - review_requested
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: read
+  statuses: read
+  deployments: write
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  # Works on pushes or PRs
+  BRANCH_NAME_CURRENT: ${{ github.head_ref || github.ref_name }}
+  BRANCH_NAME_DEFAULT: ${{ github.event.repository.default_branch }}
+
+jobs:
+  ##################################################
+  # Deploy to Cloudflare Workers using the Wrangler CLI
+  ##################################################
+
+  deploy:
+    name: Deploy website
+
+    runs-on: ${{ matrix.os }}
+
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - ubuntu-latest
+        python-version:
+          - "3.10"
+        poetry-version:
+          - latest
+
+    steps:
+      - id: checkout_repository
+        name: Checkout repository with submodules
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
+          clean: true
+          persist-credentials: true
+
+      - id: hugo_install
+        name: Download and Install Hugo
+        run: |
+          wget https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb
+          sudo dpkg -i hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb
+          hugo version
+
+      - id: hugo_cleanup
+        name: Remove unwanted Hugo files before build
+        run: |
+          rm -f themes/*/content/post/* || echo "Failed to remove posts from theme"
+          rm -f themes/*/data/authors/* || echo "Failed to remove authors from theme"
+          rm -rf assets/images/backup || echo "Failed to remove extra images"
+          rm -rf static/images/backup || echo "Failed to remove extra images"
+
+      - id: hugo_modules
+        name: Download Hugo modules
+        run: |
+          if [[ -f package.json ]]; then
+            echo "Running npm install"
+            npm install
+          fi
+          if [[ -f "go.mod" ]]; then
+            echo "Downloading Hugo go modules"
+            go mod download -x
+          else
+            echo "No go.mod file found"
+          fi
+          echo "Downloading Hugo modules"
+          hugo mod clean
+          hugo mod tidy
+          #hugo mod get -u ./...
+          hugo mod graph
+
+      # Any branch other than the default is staged for preview.
+      - id: hugo_build_staging
+        name: Build the website using Hugo (Staging)
+        if: env.BRANCH_NAME_CURRENT != env.BRANCH_NAME_DEFAULT
+        env:
+          TZ: "Australia/Sydney"
+        run: |
+          hugo --verbose --gc --minify --cleanDestinationDir --environment staging
+          touch public/.nojekyll
+          ls -la public/
+
+      # The default branch is 'Production'
+      - id: hugo_build_production
+        if: env.BRANCH_NAME_CURRENT == env.BRANCH_NAME_DEFAULT
+        name: Build the website using Hugo (Production)
+        env:
+          TZ: "Australia/Sydney"
+        run: |
+          hugo --verbose --gc --minify --cleanDestinationDir --environment production
+          touch public/.nojekyll
+          ls -la public/
+
+      - id: publish_website_preview
+        name: Publish to Cloudflare Pages (Preview)
+        if: ${{ env.BRANCH_NAME_CURRENT != env.BRANCH_NAME_DEFAULT }}
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: website-saltlabs-docs-codestream-cli
+          directory: docs/build/html
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: preview
+
+      - id: publish_website_production
+        name: Publish to Cloudflare Pages
+        if: ${{ env.BRANCH_NAME_CURRENT == env.BRANCH_NAME_DEFAULT }}
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: website-saltlabs-docs-codestream-cli
+          directory: docs/build/html
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          #branch: production
+          branch: main # TODO: Cloudflare dasboard has no toggle yet.
+
+      - id: cloudflare_pages_info
+        name: Cloudflare Pages Info
+        run: |
+          echo ""
+          echo "##### Preview ######"
+          echo "ID: ${{ steps.publish_website_preview.outputs.id }}"
+          echo "URL: ${{ steps.publish_website_preview.outputs.url }}"
+          echo "Alias: ${{ steps.publish_website_preview.outputs.alias }}"
+          echo "Environment: ${{ steps.publish_website_preview.outputs.environment }}"
+          echo ""
+          echo "##### Production ######"
+          echo "ID: ${{ steps.publish_website_production.outputs.id }}"
+          echo "URL: ${{ steps.publish_website_production.outputs.url }}"
+          echo "Alias: ${{ steps.publish_website_production.outputs.alias }}"
+          echo "Environment: ${{ steps.publish_website_production.outputs.environment }}"
+
+  ##################################################
+  # Giphy thumbs up or down
+  ##################################################
+
+  check:
+    name: PR Status Checks
+
+    runs-on: ${{ matrix.os }}
+
+    timeout-minutes: 30
+
+    strategy:
+      fail-fast: true
+      matrix:
+        os:
+          - ubuntu-latest
+
+    needs: deploy
+
+    steps:
+      - name: PR Status Giphy
+        id: pr-status-giphy
+        uses: dgteixeira/pr-status-giphy-action@v2
+        if: github.event_name == 'pull_request'
+        env:
+          GIPHY_API_KEY: ${{ secrets.GIPHY_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

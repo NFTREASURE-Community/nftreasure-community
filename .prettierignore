@@ -1,0 +1,5 @@
+# Images make prettier sad.
+assets/
+
+# Ignore themes
+themes/

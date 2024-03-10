@@ -1,0 +1,12 @@
+---
+##################################################
+# Hugo
+##################################################
+
+baseURL: http://localhost:1313
+
+disableFastRender: true
+
+disableLiveReload: false
+
+buildDrafts: true

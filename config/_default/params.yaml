@@ -1,0 +1,23 @@
+##################################################
+# Params
+##################################################
+
+favicon: images/favicon.png
+
+logo: img/NFTREASURE.png
+
+dark_mode: true
+
+preloader: true
+
+homepage_content: "The NFTREASURE Community Website"
+
+homepage_background: "img/banner.jpg"
+
+description: "NFTREASURE Community Website"
+
+author: "NFTREASURE Community"
+
+contact_form_action: "https://airform.io/contact@nftreasure.community"
+
+copyright: "NFTREASURE Community"

@@ -1,0 +1,79 @@
+##################################################
+# Hugo
+##################################################
+
+title: NFTREASURE
+
+theme: phantom-hugo
+
+languageCode: "en-us"
+
+timeZone: Australia/Sydney
+
+# paginate = 6 # see https://gohugo.io/extras/pagination/
+paginate: 6
+
+# post excerpt, see https://gohugo.io/content-management/excerpts/
+summaryLength: 10
+
+googleAnalytics: ""
+
+disqusShortname: ""
+
+hasCJKLanguage: false
+
+module:
+  mounts:
+    - source: assets
+      target: assets
+    - source: hugo_stats.json
+      target: assets/watching/hugo_stats.json
+
+build:
+  noJSConfigInAssets: false
+  useResourceCacheWhen: fallback
+  buildStats:
+    enable: true
+  cachebusters:
+    - source: assets/.*\.(js|ts|jsx|tsx)
+      target: (js|scripts|javascript)
+    - source: assets/.*\.(css|sass|scss)$
+      target: (css|styles|scss|sass)
+    - source: (postcss|tailwind)\.config\.js
+      target: (css|styles|scss|sass)
+    - source: assets/.*\.(.*)$
+      target: $1
+
+caches:
+  images:
+    dir: ':resourceDir/_gen'
+    maxAge: 720h
+  assets:
+    dir: ':resourceDir/_gen'
+    maxAge: 720h
+
+imaging:
+  quality: 90
+  resampleFilter: Lanczos
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+    - WebAppManifest
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+mediaTypes:
+  application/manifest+json:
+    suffixes:
+      - webmanifest
+
+outputFormats:
+  WebAppManifest:
+    mediaType: application/manifest+json
+    rel: manifest

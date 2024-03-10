@@ -139,7 +139,7 @@ jobs:
           projectName: ${{ env.PAGES_PROJECT_NAME }}
           directory: public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: preview
+          branch: staging
 
       - id: publish_website_production
         name: Publish to Cloudflare Pages
@@ -151,8 +151,7 @@ jobs:
           projectName: ${{ env.PAGES_PROJECT_NAME }}
           directory: public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          #branch: production
-          branch: main # TODO: Cloudflare dasboard has no toggle yet.
+          branch: production
 
       - id: cloudflare_pages_info
         name: Cloudflare Pages Info

@@ -42,6 +42,7 @@ scss__
 
 # Ignore devenv.sh cache.
 .devenv/
+.devenv.flake.nix
 
 # Ignore direnv cache.
 .direnv/

@@ -9,18 +9,18 @@ next_page: "resume/"
 
 #### Service Item ####
 services:
-- name : Creative <br> Design
-  content : "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
-  
-- name : Responsive <br> Layout
-  content : "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
-  
-- name : User <br> Friendly
-  content : "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
-  
-- name : Lovely <br> Animation
-  content : "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
-  
-- name : Ready to <br> launch
-  content : "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
+- name: Creative <br> Design
+  content: "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
+
+- name: Responsive <br> Layout
+  content: "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
+
+- name: User <br> Friendly
+  content: "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
+
+- name: Lovely <br> Animation
+  content: "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
+
+- name: Ready to <br> launch
+  content: "Claritas est etiam processus dynamicus, qui sequitur mutationem consue."
 ---

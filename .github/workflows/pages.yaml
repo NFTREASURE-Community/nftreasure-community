@@ -129,8 +129,8 @@ jobs:
           touch public/.nojekyll
           ls -la public/
 
-      - id: publish_website_preview
-        name: Publish to Cloudflare Pages (Preview)
+      - id: publish_website_staging
+        name: Publish to Cloudflare Pages (Staging)
         if: ${{ env.BRANCH_NAME_CURRENT != env.BRANCH_NAME_DEFAULT }}
         uses: cloudflare/pages-action@v1
         with:

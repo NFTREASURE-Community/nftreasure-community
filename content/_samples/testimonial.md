@@ -10,38 +10,38 @@ next_page: "contact/"
 ######### testimonial ##########
 testimonial:
 # testimonial item
-- name : "Adam Drigan"
-  designation : "CEO, Ultra Solution"
-  image : "img/tm.jpg"
-  content : "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
-  
+- name: "Adam Drigan"
+  designation: "CEO, Ultra Solution"
+  image: "img/tm.jpg"
+  content: "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
+
 # testimonial item
-- name : "Adam Drigan"
-  designation : "CEO, Ultra Solution"
-  image : "img/tm-2.jpg"
-  content : "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
-  
+- name: "Adam Drigan"
+  designation: "CEO, Ultra Solution"
+  image: "img/tm-2.jpg"
+  content: "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
+
 # testimonial item
-- name : "Adam Drigan"
-  designation : "CEO, Ultra Solution"
-  image : "img/tm.jpg"
-  content : "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
-  
+- name: "Adam Drigan"
+  designation: "CEO, Ultra Solution"
+  image: "img/tm.jpg"
+  content: "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
+
 # testimonial item
-- name : "Adam Drigan"
-  designation : "CEO, Ultra Solution"
-  image : "img/tm-2.jpg"
-  content : "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
-  
+- name: "Adam Drigan"
+  designation: "CEO, Ultra Solution"
+  image: "img/tm-2.jpg"
+  content: "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
+
 # testimonial item
-- name : "Adam Drigan"
-  designation : "CEO, Ultra Solution"
-  image : "img/tm.jpg"
-  content : "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
-  
+- name: "Adam Drigan"
+  designation: "CEO, Ultra Solution"
+  image: "img/tm.jpg"
+  content: "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
+
 # testimonial item
-- name : "Adam Drigan"
-  designation : "CEO, Ultra Solution"
-  image : "img/tm-2.jpg"
-  content : "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
+- name: "Adam Drigan"
+  designation: "CEO, Ultra Solution"
+  image: "img/tm-2.jpg"
+  content: "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima."
 ---

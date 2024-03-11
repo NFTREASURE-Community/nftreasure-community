@@ -1,45 +1,50 @@
 ---
-title: "About Ron Jay"
-watermark: "About"
-image: "img/ron-jay.jpeg"
-description : "Ron Jay is the ultimate degenerate."
+title: "Ron Jay"
+watermark: "Ron Jay"
+description: "the ultimate reformed degenerate."
+image: "img/ron-jay/mirror.jpeg"
 layout: "about"
 weight: 7
-prev_page: "ron-jay/welcome"
+prev_page: "ron-jay/who"
 next_page: "ron-jay/resume"
 
-# author description
+#########################
+# Author description
+#########################
+
 author_info:
 
-  - name : "Date of birth"
-    description : "29th july, 1984"
+  - name: "Expert in"
+    description: "DeFi, NFT, Crypto"
 
-  - name : "Language"
-    description : "English, CT-Native"
+  - name: "Hobbies"
+    description: "mullet maintenance, moustache grooming and max bidding."
 
-  - name : "Expert in"
-    description : "DeFi, NFT, Crypto"
+#########################
+# Skills
+#########################
 
-# skill set
 skills:
 
-  - name : "Degenerate"
-    percentage : "90%"
+  - name: "Degenerate"
+    percentage: "90%"
 
-  - name : "Mullet"
-    percentage : "78%"
+  - name: "Mullet"
+    percentage: "78%"
 
-  - name : "Moustache"
-    percentage : "85%"
+  - name: "Moustache"
+    percentage: "85%"
 
-  - name : "Max Bidding"
-    percentage : "100%"
+  - name: "Max Bidding"
+    percentage: "100%"
 
-  - name : "Math"
-    percentage : "0%"
+  - name: "Math"
+    percentage: "5%"
 
 ---
 
-Ron Jay is the ultimate reformed degenerate.
+Meet Ron Jay, the ultimate crypto native & reformed degenerate.
 
-about coming soon 🤔
+He's a true survivor, having aped his way from rags to riches & back again.
+
+Now, he shares his wisdom with the NFTREASURE community, helping others make bank in the digital financial frontier.

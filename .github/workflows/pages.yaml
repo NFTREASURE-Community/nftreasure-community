@@ -107,18 +107,36 @@ jobs:
           #hugo mod get -u ./...
           hugo mod graph
 
-      # Any branch other than the default is staged for preview.
-      - id: hugo_build_staging
-        name: Build the website using Hugo (Staging)
+      #########################
+      # Preview
+      #########################
+
+      - id: hugo_build_preview
+        name: Build the website using Hugo (Preview)
         if: env.BRANCH_NAME_CURRENT != env.BRANCH_NAME_DEFAULT
         env:
           TZ: "Australia/Sydney"
         run: |
-          hugo --verbose --gc --minify --cleanDestinationDir --environment staging
+          hugo --verbose --gc --minify --cleanDestinationDir --environment preview
           touch public/.nojekyll
           ls -la public/
 
-      # The default branch is 'Production'
+      - id: publish_website_preview
+        name: Publish to Cloudflare Pages (Preview)
+        if: ${{ env.BRANCH_NAME_CURRENT != env.BRANCH_NAME_DEFAULT }}
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ env.PAGES_PROJECT_NAME }}
+          directory: public
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: preview
+
+      #########################
+      # Production
+      #########################
+
       - id: hugo_build_production
         if: env.BRANCH_NAME_CURRENT == env.BRANCH_NAME_DEFAULT
         name: Build the website using Hugo (Production)
@@ -129,20 +147,8 @@ jobs:
           touch public/.nojekyll
           ls -la public/
 
-      - id: publish_website_staging
-        name: Publish to Cloudflare Pages (Staging)
-        if: ${{ env.BRANCH_NAME_CURRENT != env.BRANCH_NAME_DEFAULT }}
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ env.PAGES_PROJECT_NAME }}
-          directory: public
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: staging
-
       - id: publish_website_production
-        name: Publish to Cloudflare Pages
+        name: Publish to Cloudflare Pages (Production)
         if: ${{ env.BRANCH_NAME_CURRENT == env.BRANCH_NAME_DEFAULT }}
         uses: cloudflare/pages-action@v1
         with:
@@ -152,6 +158,10 @@ jobs:
           directory: public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: production
+
+      #########################
+      # Info
+      #########################
 
       - id: cloudflare_pages_info
         name: Cloudflare Pages Info

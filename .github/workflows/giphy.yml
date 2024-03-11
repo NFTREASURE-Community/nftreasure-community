@@ -53,7 +53,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
-          checkName: Publish Deploy website (${{ matrix.os }})
+          checkName: Deploy website (${{ matrix.os }})
 
       - id: pr_comment_thumbs_up
         name: PR Comment (Thumbs Up)

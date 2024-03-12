@@ -8,6 +8,6 @@ prev_page: "strategies"
 next_page: "strategies"
 ---
 
-Strategy goes here.
+TODO: Put strategy here...
 
 ---

@@ -19,12 +19,7 @@ contact_info:
 
   - name: "Phone"
     id: "Call Me"
-    action:
-      {
-        {
-          < button label="Call Us" link="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="nofollow noreferrer" >,
-        },
-      }
+    action: '"https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"'
     icon: "tf-phone2"
 
   - name: "Discord"

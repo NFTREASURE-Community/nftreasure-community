@@ -44,3 +44,6 @@ link = "js/jquery.easing.min.js"
 
 [[params.plugins.js]]
 link = "plugins/youtube-lite.js"
+
+[[params.plugins.js]]
+link = "plugins/lazy-loader.js"

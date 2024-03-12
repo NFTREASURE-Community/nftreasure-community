@@ -3,7 +3,6 @@
 ##################################################
 
 main:
-
   # Top row (4)
 
   - name: Calculator
@@ -30,7 +29,7 @@ main:
 
   - name: Strategies
     pre: tf-ion-android-bulb
-    url: strategies/
+    url: strategies/overview
     weight: 5
 
   - name: Ron Jay

@@ -9,17 +9,17 @@ next_page: "/ron-jay/welcome"
 
 strategies:
   - name: Strategy 1
-    file: "strategy-1.md"
+    file: "strategy-1"
 
   - name: Strategy 2
-    file: "strategy-2.md"
+    file: "strategy-2"
 
   - name: Strategy 3
-    file: "strategy-3.md"
+    file: "strategy-3"
 
   - name: Strategy 4
-    file: "strategy-4.md"
+    file: "strategy-4"
 
   - name: Strategy 5
-    file: "strategy-5.md"
+    file: "strategy-5"
 ---

@@ -1,6 +1,3 @@
 module gethugothemes.com
 
-go 1.21
-
-require (
-)
+go 1.20

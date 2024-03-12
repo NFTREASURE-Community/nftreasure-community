@@ -70,7 +70,7 @@ npm --prefix workers-site update --save-prod
 
 # Update Go
 hugo mod clean
-hugo mod get -u
+hugo mod get -u ./...
 hugo mod tidy
 hugo mod graph
 ```

@@ -1,30 +1,37 @@
 ---
 title: "Contact Us"
 watermark: "contact"
-description: "Contact the NFTREASURE Community."
+description: "Get in touch."
 layout: "contact"
 weight: 7
-prev_page: "ron-jay/"
+prev_page: "ron-jay/who"
 next_page: "/"
 
-# contact information
+#########################
+# Contact
+#########################
+
 contact_info:
-- name: "Email"
-  id: "Send us an email"
-  action: "mailto:contact@nftreasure.community"
-  icon: "tf-envelope2"
+  - name: "Email"
+    id: "Send us an email"
+    action: "mailto:contact@nftreasure.community"
+    icon: "tf-envelope2"
 
-#- name: "Phone"
-#  id: "+000 1111 2222"
-#  action: "tel:+000-1111-2222"
-#  icon: "tf-phone2"
+  - name: "Phone"
+    id: "Call Me"
+    action: "{{< youtube-lite dQw4w9WgXcQ >}}"
+    # {{< button label="Call Us" link="https://www.youtube.com/watch?v=dQw4w9WgXcQ" rel="nofollow noreferrer" >}}
+    icon: "tf-phone2"
 
-- name: "Discord"
-  id: "Join the Discord"
-  action: "https://discord.com/invite/RgeRcF75JV"
-  icon: "tf-chat"
+  - name: "Discord"
+    id: "Join the Discord"
+    action: "https://discord.com/invite/RgeRcF75JV"
+    icon: "tf-chat"
 
-# social icon
+#########################
+# Socials
+#########################
+
 social:
 
   #- icon: "tf-ion-social-facebook"
@@ -38,5 +45,4 @@ social:
 
   #- icon: "tf-ion-social-dribbble"
   #  link: "#"
-
 ---

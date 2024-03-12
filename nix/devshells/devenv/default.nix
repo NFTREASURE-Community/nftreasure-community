@@ -153,7 +153,7 @@ in
             prettier = {
               check = true;
               cache = false;
-              list-different = true;
+              list-different = false;
               color = true;
               no-bracket-spacing = true;
               write = true;
@@ -173,7 +173,7 @@ in
             };
 
             yamllint = {
-              configPath = ".yamllint.yml";
+              configPath = ".linters/config/.yamllint.yml";
             };
           };
         };

@@ -68,7 +68,7 @@ npm update --save-prod
 npm --prefix workers-site update --save-dev
 npm --prefix workers-site update --save-prod
 
-# update Go
+# Update Go
 hugo mod clean
 hugo mod get -u
 hugo mod tidy

@@ -41,3 +41,6 @@ link = "js/owl.carousel.min.js"
 
 [[params.plugins.js]]
 link = "js/jquery.easing.min.js"
+
+[[params.plugins.js]]
+link = "plugins/youtube-lite.js"

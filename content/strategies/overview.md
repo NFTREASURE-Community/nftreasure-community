@@ -1,7 +1,7 @@
 ---
 title: "NFTREASURE Strategies"
 watermark: "Strategies"
-description: "Strategies from NFTREASURE gigabrains."
+description: "Strategies from community gigabrains."
 layout: "strategies"
 weight: 5
 prev_page: "/"

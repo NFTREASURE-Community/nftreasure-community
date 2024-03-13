@@ -21,7 +21,7 @@ main:
     weight: 3
 
   - name: Diamond Hands
-    pre: tf-ion-android-hand
+    pre: "tf-diamond tf-ion-android-hand"
     url: https://www.smarterswap.xyz/search
     weight: 4
 

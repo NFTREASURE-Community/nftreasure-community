@@ -20,7 +20,3 @@
 
 <!-- Main script -->
 {{ $scripts = $scripts | append (resources.Get "js/script.js") }}
-{{ if hugo.IsProduction }}
-  {{ $scripts = $scripts | fingerprint "sha512" }}
-{{ end }}
-<script crossorigin="anonymous" defer {{ if hugo.IsProduction }}integrity="{{ $scripts.Data.Integrity }}"{{end}} type="application/javascript">{{$scripts.Content | safeJS}}</script>

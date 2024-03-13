@@ -16,12 +16,12 @@ main:
     weight: 2
 
   - name: Daycare
-    pre: "tf-baby"
+    pre: icon-baby
     url: https://nftreasure.gitlab.io/daycare/
     weight: 3
 
   - name: Diamond Hands
-    pre: "tf-diamond tf-ion-android-hand"
+    pre: icon-diamond tf-ion-android-hand
     url: https://www.smarterswap.xyz/search
     weight: 4
 

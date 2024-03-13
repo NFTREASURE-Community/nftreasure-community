@@ -106,36 +106,45 @@ async function sendMessageToServer(message) {
 
   // Chatbot URL
   const chatbotUrl = document.getElementById('chatbotConfig').getAttribute('data-chatbot-url');
+  const botName = "Ron Jay"
 
   console.log('Chatbot URL:', chatbotUrl)
-  console.log('Sending message to Ron Jay:', message);
+  console.log('Sending message to", botName, ":', message)
+
+  // Timeout
+  const timeoutPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject('%s took too long to respond. Please try again later.', botName);
+    }, 5000);
+  });
 
 	try {
 
-		const response = await fetch(chatbotUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ message: message }),
-    });
+    const response = await Promise.race([
+      fetch(chatbotUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: message }),
+      }),
+      timeoutPromise
+    ]);
+
+    console.log('%s has responded.', botName);
 
     if (response.ok) {
 
 			const data = await response.json();
-      addMessageToChat('Ron Jay', data.reply);
+      addMessageToChat(botName, data.reply);
 
 		} else {
-
-      addMessageToChat('Ron Jay', `Error: ${response.statusText}`);
-      console.error('Ron Jay responded with an error:', response.statusText);
-
-		}
+      console.error(`${botName} has returned an error:`, response.statusText);
+      addMessageToChat(botName, `Error: ${response.statusText}`);
+    }
 
 	} catch (error) {
 
-    addMessageToChat('Ron Jay', 'Failed to talk to Ron Jay. Please try again later.');
-		console.error('Failed to talk to Ron Jay. Error:', error);
+    console.error(`Failed to talk to ${botName}. Error:`, error);
+    addMessageToChat(botName, `Failed to talk to ${botName}. Error: ${error}`);
 
 	}
 

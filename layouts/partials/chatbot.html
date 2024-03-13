@@ -90,7 +90,10 @@ function addMessageToChat(sender, message) {
 	const chatMessages = document.getElementById('chatbot-messages');
   const messageElement = document.createElement('div');
 
-  messageElement.classList.add('chat-message', sender);
+  // Spaces are not allowed in class names.
+  const senderClass = sender.replace(/\s+/g, '-').toLowerCase();
+
+  messageElement.classList.add('chat-message', senderClass);
   messageElement.textContent = message;
 
   chatMessages.appendChild(messageElement);

@@ -4,8 +4,8 @@ watermark: "Strategy 3"
 description: "Strategy 3"
 layout: "strategy"
 weight: 103
-prev_page: "strategies"
-next_page: "strategies"
+prev_page: "strategies/overview"
+next_page: "strategies/overview"
 ---
 
 TODO: Put strategy here...

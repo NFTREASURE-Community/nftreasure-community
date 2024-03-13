@@ -87,16 +87,39 @@ document.getElementById('chatbot-send-btn').addEventListener('click', async func
 // Chatbot Message adding function
 function addMessageToChat(sender, message) {
 
-	const chatMessages = document.getElementById('chatbot-messages');
-  const messageElement = document.createElement('div');
+  const chatMessages = document.getElementById('chatbot-messages');
+  const messageDiv = document.createElement('div');
+  const messageText = document.createElement('span');
+  const avatarImg = document.createElement('img');
 
-  // Spaces are not allowed in class names.
+  // Define avatar images based on the sender
+  if (sender === 'user') {
+
+    avatarImg.src = 'img/avatars/user.png';
+
+  } else {
+
+    avatarImg.src = 'img/avatars/support.png';
+
+  }
+
+  avatarImg.classList.add('avatar');
+
+  // Spaces are not allowed in class names, replace them with hyphens
   const senderClass = sender.replace(/\s+/g, '-').toLowerCase();
 
-  messageElement.classList.add('chat-message', senderClass);
-  messageElement.textContent = message;
+  // Set classes for the message div
+  messageDiv.classList.add('chat-message', senderClass);
 
-  chatMessages.appendChild(messageElement);
+  // Append avatar image and message text to the message div
+  messageDiv.appendChild(avatarImg);
+  messageText.textContent = message;
+  messageDiv.appendChild(messageText);
+
+  // Append the message div to the chat messages container
+  chatMessages.appendChild(messageDiv);
+
+  // Auto-scroll to the latest message
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
 }
@@ -134,8 +157,8 @@ async function sendMessageToServer(message) {
       const data = await response.json();
       console.log(`${botName} has responded with:`, data);
 
-      console.log('The question asked:', data.message || "No question provided.");
-      console.log('The response received:', data.reply || "No response provided.");
+      console.log('Question:', data.message || "No question provided.");
+      console.log('Response:', data.reply || "No response provided.");
       console.log('Error:', data.error || "No error.");
 
       if (data.error) {
@@ -254,19 +277,60 @@ async function sendMessageToServer(message) {
     cursor: not-allowed;
 }
 
-.chat-message div {
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
-	background-color: var(--light-color);
+.chat-message {
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: var(--light);
+    color: var(--text-color);
+    max-width: 70%;
 }
 
 .chat-message.user {
-  justify-content: flex-start;
+    margin-left: 20px;
+    align-self: flex-start;
 }
 
 .chat-message.bot {
-  justify-content: flex-end;
+    margin-right: 20px;
+    align-self: flex-end;
+}
+
+.chat-message.user::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--light);
+    transform: translateY(-50%);
+}
+
+.chat-message.bot::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent var(--light) transparent transparent;
+    transform: translateY(-50%);
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.chat-message.user .avatar {
+    order: -1;
+}
+
+.chat-message.bot .avatar {
+    margin-left: 5px;
 }
 
 .chat-message img {

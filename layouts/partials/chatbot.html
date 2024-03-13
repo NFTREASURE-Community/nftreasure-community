@@ -70,11 +70,12 @@ document.getElementById('chatbot-send-btn').addEventListener('click', async func
 
     // Disable the button to prevent multiple clicks.
     this.disabled = true;
+
     const inputElement = document.getElementById('chatbot-input');
     const message = inputElement.value.trim();
 
     if (message) {
-        addMessageToChat('user', message);
+        addMessageToChat('User', message);
         await sendMessageToServer(message);
         inputElement.value = '';
     }
@@ -103,6 +104,9 @@ async function sendMessageToServer(message) {
   // Chatbot URL
   const chatbotUrl = document.getElementById('chatbotConfig').getAttribute('data-chatbot-url');
 
+  console.log('Chatbot URL:', chatbotUrl)
+  console.log('Sending message to Ron Jay:', message);
+
 	try {
 
 		const response = await fetch(chatbotUrl, {
@@ -116,18 +120,18 @@ async function sendMessageToServer(message) {
     if (response.ok) {
 
 			const data = await response.json();
-      addMessageToChat('bot', data.reply);
+      addMessageToChat('Ron Jay', data.reply);
 
 		} else {
 
-      addMessageToChat('bot', `Error: ${response.statusText}`);
+      addMessageToChat('Ron Jay', `Error: ${response.statusText}`);
       console.error('Ron Jay responded with an error:', response.statusText);
 
 		}
 
 	} catch (error) {
 
-    addMessageToChat('bot', 'Failed to talk to Ron Jay. Please try again later.');
+    addMessageToChat('Ron Jay', 'Failed to talk to Ron Jay. Please try again later.');
 		console.error('Failed to talk to Ron Jay. Error:', error);
 
 	}

@@ -2,7 +2,7 @@
 title: "Ron Jay"
 watermark: "Ron Jay"
 description: "Who is Ron Jay?"
-image: "img/ron-jay/portrait.jpeg"
+image: "/img/ron-jay/portrait.jpeg"
 layout: "welcome"
 weight: 6
 prev_page: "strategies/"

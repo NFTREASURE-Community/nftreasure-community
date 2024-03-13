@@ -10,13 +10,13 @@ main:
     url: https://nftreasure.gitlab.io/calculator/
     weight: 1
 
-  - name: Community Marketplace
+  - name: Marketplace
     pre: tf-basket
     url: https://nftreasure.gitlab.io/community-marketplace/
     weight: 2
 
   - name: Daycare
-    pre: glyphicon-baby-formula
+    pre: "U+1F37C"
     url: https://nftreasure.gitlab.io/daycare/
     weight: 3
 

@@ -12,7 +12,7 @@ preloader: true
 
 homepage_content: "The NFTREASURE Community Website"
 
-homepage_background: "img/banner.jpg"
+homepage_background: "/img/banner.jpg"
 
 description: "NFTREASURE Community Website"
 

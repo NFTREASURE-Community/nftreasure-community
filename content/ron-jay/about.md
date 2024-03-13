@@ -2,7 +2,7 @@
 title: "Ron Jay"
 watermark: "Ron Jay"
 description: "the ultimate reformed degenerate."
-image: "img/ron-jay/mirror.jpeg"
+image: "/img/ron-jay/mirror.jpeg"
 layout: "about"
 weight: 7
 prev_page: "ron-jay/who"
@@ -13,7 +13,6 @@ next_page: "ron-jay/resume"
 #########################
 
 author_info:
-
   - name: "Expert in"
     description: "DeFi, NFT, Crypto"
 
@@ -25,7 +24,6 @@ author_info:
 #########################
 
 skills:
-
   - name: "Degenerate"
     percentage: "90%"
 
@@ -40,7 +38,6 @@ skills:
 
   - name: "Math"
     percentage: "5%"
-
 ---
 
 Meet Ron Jay, the ultimate crypto native & reformed degenerate.

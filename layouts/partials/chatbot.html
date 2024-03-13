@@ -18,7 +18,7 @@
 
 	<!-- Chatbot Input Container -->
 	<div id="chatbot-input-container">
-    <input type="text" id="chatbot-input" placeholder="Wen? Coming thoon degen...">
+    <input type="text" id="chatbot-input" placeholder="Enter your message">
     <button id="chatbot-send-btn">Send</button>
   </div>
 
@@ -31,12 +31,13 @@
 document.getElementById('chatbot-toggle').addEventListener('click', function() {
 
 	var chatContainer = document.getElementById('chatbot-container');
-  var chatToggle = document.getElementById('chatbot-toggle');
+  //var chatToggle = document.getElementById('chatbot-toggle');
 
   chatContainer.style.display = "flex";
   chatToggle.style.display = "none";
 
 });
+
 
 // Close Chatbot on Outside Click
 document.addEventListener('click', function(e) {
@@ -65,16 +66,20 @@ document.getElementById('chatbot-input').addEventListener('keypress', function(e
 });
 
 // Chatbot Send Button
-document.getElementById('chatbot-send-btn').addEventListener('click', function() {
+document.getElementById('chatbot-send-btn').addEventListener('click', async function() {
 
-	const inputElement = document.getElementById('chatbot-input');
-  const message = inputElement.value.trim();
+    // Disable the button to prevent multiple clicks.
+    this.disabled = true;
+    const inputElement = document.getElementById('chatbot-input');
+    const message = inputElement.value.trim();
 
-  if (message) {
-    addMessageToChat('user', message);
-    sendMessageToServer(message);
-    inputElement.value = '';
-  }
+    if (message) {
+        addMessageToChat('user', message);
+        await sendMessageToServer(message);
+        inputElement.value = '';
+    }
+
+    this.disabled = false;
 
 });
 
@@ -115,13 +120,15 @@ async function sendMessageToServer(message) {
 
 		} else {
 
-			console.error('Ron Jay responded with an error:', response.statusText);
+      addMessageToChat('bot', `Error: ${response.statusText}`);
+      console.error('Ron Jay responded with an error:', response.statusText);
 
 		}
 
 	} catch (error) {
 
-		console.error('Failed to send message:', error);
+    addMessageToChat('bot', 'Failed to talk to Ron Jay. Please try again later.');
+		console.error('Failed to talk to Ron Jay. Error:', error);
 
 	}
 
@@ -210,7 +217,7 @@ async function sendMessageToServer(message) {
 #chatbot-send-btn {
   padding: 5px 10px;
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: var(--title-color);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -252,6 +259,11 @@ async function sendMessageToServer(message) {
   border-radius: 8px;
   background-color: var(--light-color);
   color: var(--text-color);
+}
+
+#chatbot-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 </style>

@@ -131,14 +131,21 @@ async function sendMessageToServer(message) {
 
     console.log('%s has responded with:', botName, response);
 
+    console.log('Response Message:', response.message);
+    console.log('Response Error:', response.error);
+    console.log('Response Body Message:', response.body.message);
+    console.log('Response Body Error:', response.body.message);
+
     if (response.ok) {
 
-			const data = await response.json();
+      data = await response.json();
       addMessageToChat(botName, data.reply);
 
 		} else {
+
       console.error(`${botName} has returned an error:`, response.statusText);
       addMessageToChat(botName, `Error: ${response.statusText}`);
+
     }
 
 	} catch (error) {

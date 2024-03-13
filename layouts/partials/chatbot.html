@@ -109,7 +109,7 @@ async function sendMessageToServer(message) {
   const botName = "Ron Jay"
 
   console.log('Chatbot URL:', chatbotUrl)
-  console.log('Sending message to", botName, ":', message)
+  console.log('Sending message to %s:', botName, message);
 
   // Timeout
   const timeoutPromise = new Promise((resolve, reject) => {
@@ -129,7 +129,7 @@ async function sendMessageToServer(message) {
       timeoutPromise
     ]);
 
-    console.log('%s has responded.', botName);
+    console.log('%s has responded with:', botName, response);
 
     if (response.ok) {
 

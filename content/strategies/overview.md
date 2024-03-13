@@ -22,4 +22,13 @@ strategies:
 
   - name: Strategy 5
     file: "strategy-5"
+
+  - name: Strategy 6
+    file: "strategy-6"
+
+  - name: Strategy 7
+    file: "strategy-7"
+
+  - name: Strategy 8
+    file: "strategy-8"
 ---

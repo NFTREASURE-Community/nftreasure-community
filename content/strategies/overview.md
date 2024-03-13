@@ -8,27 +8,27 @@ prev_page: "/"
 next_page: "/ron-jay/welcome"
 
 strategies:
-  - name: Strategy 1
+  - name: The Artist
     file: "strategy-1"
 
-  - name: Strategy 2
+  - name: Commissioner Gordon
     file: "strategy-2"
 
-  - name: Strategy 3
+  - name: The Diamond Hand
     file: "strategy-3"
 
-  - name: Strategy 4
+  - name: The Dumper
     file: "strategy-4"
 
-  - name: Strategy 5
+  - name: The Trader
     file: "strategy-5"
 
-  - name: Strategy 6
+  - name: The Giveaway Junkie
     file: "strategy-6"
 
-  - name: Strategy 7
+  - name: The Liquidity Provider
     file: "strategy-7"
 
-  - name: Strategy 8
+  - name: Hybrid
     file: "strategy-8"
 ---

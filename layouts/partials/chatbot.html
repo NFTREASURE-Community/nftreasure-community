@@ -133,12 +133,12 @@ async function sendMessageToServer(message) {
   const sender = 'bot';
 
   console.log('Chatbot URL:', chatbotUrl)
-  console.log('Sending message to %s:', botName, message);
+  console.log('Sending message to %s:', sender, message);
 
   // Timeout
   const timeoutPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject('%s took too long to respond. Please try again later.', botName);
+      reject('%s took too long to respond. Please try again later.', sender);
     }, 5000);
   });
 
@@ -156,29 +156,29 @@ async function sendMessageToServer(message) {
     if (response.ok) {
 
       const data = await response.json();
-      console.log(`${botName} has responded with:`, data);
+      console.log(`${sender} has responded with:`, data);
 
       console.log('Question:', data.message || "No question provided.");
       console.log('Response:', data.reply || "No response provided.");
       console.log('Error:', data.error || "No error.");
 
       if (data.error) {
-        addMessageToChat(botName, data.error);
+        addMessageToChat(sender, data.error);
       } else {
-        addMessageToChat(botName, data.reply);
+        addMessageToChat(sender, data.reply);
       }
 
 		} else {
 
-      console.error(`${botName} has returned an error:`, response.statusText);
-      addMessageToChat(botName, `Error: ${response.statusText}`);
+      console.error(`${sender} has returned an error:`, response.statusText);
+      addMessageToChat(sender, `Error: ${response.statusText}`);
 
     }
 
 	} catch (error) {
 
-    console.error(`Failed to talk to ${botName}. Error:`, error);
-    addMessageToChat(botName, `Failed to talk to ${botName}. Error: ${error}`);
+    console.error(`Failed to talk to ${sender}. Error:`, error);
+    addMessageToChat(sender, `Failed to talk to ${sender}. Error: ${error}`);
 
 	}
 

@@ -1,4 +1,7 @@
 
+<!-- Chatbot Configuration -->
+<div id="chatbotConfig" data-chatbot-url="{{ .Site.Params.chatbot.url }}" style="display: none;"></div>
+
 <!-- Chat Toggle Button -->
 <div id="chatbot-toggle">Chat with Ron Jay</div>
 
@@ -92,9 +95,12 @@ function addMessageToChat(sender, message) {
 // Chatbot Server Message
 async function sendMessageToServer(message) {
 
+  // Chatbot URL
+  const chatbotUrl = document.getElementById('chatbotConfig').getAttribute('data-chatbot-url');
+
 	try {
 
-		const response = await fetch('https://preview.chatbot.nftreasure.community/api', {
+		const response = await fetch(chatbotUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

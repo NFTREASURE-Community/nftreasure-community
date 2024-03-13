@@ -10,7 +10,9 @@
 	{{- block "main" . }}{{- end }}
 	{{- partialCached "script.html" . -}}
 
-	{{ partial "chatbot.html" . }}
+	{{ if .Site.Params.chatbot.enabled }}
+		{{ partial "chatbot.html" . }}
+	{{ end }}
 
 </body>
 

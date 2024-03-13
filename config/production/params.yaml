@@ -1,0 +1,8 @@
+##################################################
+# Params
+##################################################
+
+chatbot:
+  enabled: false
+
+  url: "https://chatbot.nftreasure.community/api"

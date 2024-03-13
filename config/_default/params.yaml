@@ -21,3 +21,21 @@ author: "NFTREASURE Community"
 contact_form_action: "https://airform.io/contact@nftreasure.community"
 
 copyright: "NFTREASURE Community"
+
+plugins:
+  css:
+    - link: >-
+        https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800
+    - link: css/bootstrap.min.css
+    - link: css/themefisher-fonts.min.css
+    - link: css/owl.carousel.min.css
+
+  js:
+    - link: js/jquery-2.2.4.min.js
+    - link: js/bootstrap.min.js
+    - link: js/isotope.pkgd.min.js
+    - link: js/jquery.nicescroll.min.js
+    - link: js/owl.carousel.min.js
+    - link: js/jquery.easing.min.js
+    - link: plugins/youtube-lite.js
+    - link: plugins/lazy-loader.js

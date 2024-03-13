@@ -130,7 +130,7 @@ async function sendMessageToServer(message) {
 
   // Chatbot URL
   const chatbotUrl = document.getElementById('chatbotConfig').getAttribute('data-chatbot-url');
-  const botName = "Ron Jay"
+  const sender = 'bot';
 
   console.log('Chatbot URL:', chatbotUrl)
   console.log('Sending message to %s:', botName, message);
@@ -223,7 +223,7 @@ async function sendMessageToServer(message) {
   bottom: 60px;
   right: 20px;
   width: 500px;
-  height: 500px;
+  height: 600px;
   background-color: var(--title-color);
   border: 2px solid var(--primary-color);
   border-radius: 8px;
@@ -278,6 +278,11 @@ async function sendMessageToServer(message) {
     cursor: not-allowed;
 }
 
+#chatbot-messages {
+  display: flex;
+  flex-direction: column;
+}
+
 .chat-message {
     background-color: var(--light);
     border-radius: 8px;
@@ -306,7 +311,9 @@ async function sendMessageToServer(message) {
     content: "";
     position: absolute;
     top: 50%;
-    left: -10px;
+    width: 0;
+    height: 0;
+    left: 100%;
     border-width: 10px;
     border-style: solid;
     border-color: transparent transparent transparent var(--title-color);
@@ -317,7 +324,7 @@ async function sendMessageToServer(message) {
     content: "";
     position: absolute;
     top: 50%;
-    right: -10px;
+    right: 100%;
     border-width: 10px;
     border-style: solid;
     border-color: transparent transparent transparent var(--title-color);

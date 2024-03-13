@@ -129,17 +129,20 @@ async function sendMessageToServer(message) {
       timeoutPromise
     ]);
 
-    console.log('%s has responded with:', botName, response);
-
-    console.log('Response Message:', response.message);
-    console.log('Response Error:', response.error);
-    console.log('Response Body Message:', response.body.message);
-    console.log('Response Body Error:', response.body.message);
-
     if (response.ok) {
 
-      data = await response.json();
-      addMessageToChat(botName, data.reply);
+      const data = await response.json();
+      console.log(`${botName} has responded with:`, data);
+
+      console.log('The question asked:', data.message || "No question provided.");
+      console.log('The response received:', data.reply || "No response provided.");
+      console.log('Error:', data.error || "No error.");
+
+      if (data.error) {
+        addMessageToChat(botName, data.error);
+      } else {
+        addMessageToChat(botName, data.reply);
+      }
 
 		} else {
 

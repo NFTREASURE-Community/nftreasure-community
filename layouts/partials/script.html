@@ -8,19 +8,18 @@
 <!-- JS Plugins + Main script -->
 {{ $scripts := slice }}
 {{ range site.Params.plugins.js }}
-  {{ if findRE "^http" .link }}
-    <script
+	{{ if findRE "^http" .link }}
+		<script
       src="{{ .link | relURL }}"
       type="application/javascript"
       {{ .attributes | safeHTMLAttr }}></script>
   {{ else }}
-    {{ $scripts = $scripts | append (resources.Get .link) }}
+		{{ $scripts = $scripts | append (resources.Get .link) }}
   {{ end }}
 {{ end }}
 
 <!-- Main script -->
 {{ $scripts = $scripts | append (resources.Get "js/script.js") }}
-{{ $scripts = $scripts | resources.Concat "js/scripts.js" }}
 {{ if hugo.IsProduction }}
   {{ $scripts = $scripts | fingerprint "sha512" }}
 {{ end }}

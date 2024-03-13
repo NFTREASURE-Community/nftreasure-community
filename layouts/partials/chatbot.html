@@ -31,10 +31,10 @@
 document.getElementById('chatbot-toggle').addEventListener('click', function() {
 
 	var chatContainer = document.getElementById('chatbot-container');
-  //var chatToggle = document.getElementById('chatbot-toggle');
+  var chatToggle = document.getElementById('chatbot-toggle');
 
   chatContainer.style.display = "flex";
-  //chatToggle.style.display = "none";
+  chatToggle.style.display = "none";
 
 });
 
@@ -223,6 +223,11 @@ async function sendMessageToServer(message) {
   cursor: pointer;
 }
 
+#chatbot-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .chat-message div {
   display: flex;
   align-items: center;
@@ -259,11 +264,6 @@ async function sendMessageToServer(message) {
   border-radius: 8px;
   background-color: var(--light-color);
   color: var(--text-color);
-}
-
-#chatbot-send-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
 }
 
 </style>

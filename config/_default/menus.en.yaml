@@ -16,7 +16,7 @@ main:
     weight: 2
 
   - name: Daycare
-    pre: "U+1F37C"
+    pre: "tf-baby"
     url: https://nftreasure.gitlab.io/daycare/
     weight: 3
 

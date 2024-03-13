@@ -2,7 +2,7 @@
 # Hugo
 ##################################################
 
-title: NFTREASURE
+title: NFTREASURE Community
 
 theme: phantom-hugo
 
@@ -46,10 +46,10 @@ build:
 
 caches:
   images:
-    dir: ':resourceDir/_gen'
+    dir: ":resourceDir/_gen"
     maxAge: 720h
   assets:
-    dir: ':resourceDir/_gen'
+    dir: ":resourceDir/_gen"
     maxAge: 720h
 
 imaging:

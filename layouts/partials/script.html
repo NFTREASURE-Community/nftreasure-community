@@ -1,8 +1,8 @@
 <!-- Google Map API -->
 {{ if eq .Permalink ("contact/" | absURL) }}
-{{ if site.Params.gmap.enable }}
+	{{ if site.Params.gmap.enable }}
 <script src="{{ site.Params.gmap.gmap_api | safeURL }}"></script>
-{{ end }}
+	{{ end }}
 {{ end }}
 
 <!-- JS Plugins + Main script -->

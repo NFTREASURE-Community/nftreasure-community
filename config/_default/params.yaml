@@ -37,5 +37,5 @@ plugins:
     - link: js/jquery.nicescroll.min.js
     - link: js/owl.carousel.min.js
     - link: js/jquery.easing.min.js
-    - link: plugins/youtube-lite.js
-    - link: plugins/lazy-loader.js
+    #- link: plugins/youtube-lite.js
+    #- link: plugins/lazy-loader.js

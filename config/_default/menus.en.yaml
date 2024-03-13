@@ -16,7 +16,7 @@ main:
     weight: 2
 
   - name: Daycare
-    pre: icon-baby
+    pre: tf-ion-home
     url: https://nftreasure.gitlab.io/daycare/
     weight: 3
 

@@ -1,0 +1,251 @@
+
+<!-- Chat Toggle Button -->
+<div id="chatbot-toggle">Chat with Ron Jay</div>
+
+<!-- Chatbot Container -->
+<div id="chatbot-container">
+
+	<!-- Chatbot Header -->
+	<div id="chatbot-header">Chat with Ron Jay</div>
+
+	<!-- Chatbot Body -->
+	<div id="chatbot-body">
+    <div id="chatbot-messages"></div>
+  </div>
+
+	<!-- Chatbot Input Container -->
+	<div id="chatbot-input-container">
+    <input type="text" id="chatbot-input" placeholder="Wen? Coming thoon degen...">
+    <button id="chatbot-send-btn">Send</button>
+  </div>
+
+</div>
+
+<!-- Chatbot Script -->
+<script>
+
+// Chatbot Toggle Button
+document.getElementById('chatbot-toggle').addEventListener('click', function() {
+
+	var chatContainer = document.getElementById('chatbot-container');
+  var chatToggle = document.getElementById('chatbot-toggle');
+
+  chatContainer.style.display = "flex";
+  chatToggle.style.display = "none";
+
+});
+
+// Close Chatbot on Outside Click
+document.addEventListener('click', function(e) {
+
+	var chatContainer = document.getElementById('chatbot-container');
+  var chatToggle = document.getElementById('chatbot-toggle');
+  var clickedInsideChat = chatContainer.contains(e.target) || chatToggle.contains(e.target);
+
+  if (!clickedInsideChat && chatContainer.style.display === "flex") {
+    chatContainer.style.display = "none";
+    chatToggle.style.display = "block";
+  }
+
+}, true);
+
+// Chatbot Input
+document.getElementById('chatbot-input').addEventListener('keypress', function(e) {
+
+	if (e.key === 'Enter' && !e.shiftKey) {
+
+		e.preventDefault(); // Prevent the default action to stop from submitting form
+    document.getElementById('chatbot-send-btn').click(); // Trigger click on send button
+
+	}
+
+});
+
+// Chatbot Send Button
+document.getElementById('chatbot-send-btn').addEventListener('click', function() {
+
+	const inputElement = document.getElementById('chatbot-input');
+  const message = inputElement.value.trim();
+
+  if (message) {
+    addMessageToChat('user', message);
+    sendMessageToServer(message);
+    inputElement.value = '';
+  }
+
+});
+
+// Chatbot Message adding function
+function addMessageToChat(sender, message) {
+
+	const chatMessages = document.getElementById('chatbot-messages');
+  const messageElement = document.createElement('div');
+
+  messageElement.classList.add('chat-message', sender);
+  messageElement.textContent = message;
+
+  chatMessages.appendChild(messageElement);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+}
+
+// Chatbot Server Message
+async function sendMessageToServer(message) {
+
+	try {
+
+		const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message: message }),
+    });
+
+    if (response.ok) {
+
+			const data = await response.json();
+      addMessageToChat('bot', data.reply);
+
+		} else {
+
+			console.error('Ron Jay responded with an error:', response.statusText);
+
+		}
+
+	} catch (error) {
+
+		console.error('Failed to send message:', error);
+
+	}
+
+}
+
+</script>
+
+<style>
+
+:root {
+	--primary-color: #F0C854;
+	--light-dark: #080F20;
+	--light: #fff;
+	--text-color: #ababab;
+	--title-color: #1e2530;
+	--border-color: #eee;
+	--font-family: 'Open Sans', serif;
+}
+
+#chatbot-toggle {
+  position: fixed;
+	bottom: 20px;
+  right: 20px;
+  background-color: var(--title-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border: 10px solid transparent;
+	transition: border-color 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1050;
+  font-family: var(--font-family);
+}
+
+#chatbot-toggle:hover {
+  border-color: var(--primary-color);
+}
+
+#chatbot-container {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  width: 400px;
+  height: 400px;
+  background-color: var(--title-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  flex-direction: column;
+  z-index: 1040;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family);
+}
+
+#chatbot-header {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--title-color);
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#chatbot-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: var(--light-color);
+}
+
+#chatbot-input-container {
+  display: flex;
+  padding: 10px;
+  background-color: var(--light-color);
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--light-color);
+}
+
+#chatbot-send-btn {
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-message div {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+	background-color: var(--light-color);
+}
+
+.chat-message.user {
+  justify-content: flex-start;
+}
+
+.chat-message.bot {
+  justify-content: flex-end;
+}
+
+.chat-message img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.chat-message.user img {
+  order: -1;
+}
+
+.chat-message.bot img {
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+.chat-message div {
+  max-width: 70%;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+}
+
+</style>

@@ -4,7 +4,7 @@
   <div class="pt-table">
     <div class="pt-tablecell page-strategy relative">
       <!-- .close -->
-      <a href="{{ printf "%s/strategies" site.BaseURL | absURL }}" class="page-close"><i class="tf-ion-close"></i></a>
+      <a href="{{ printf "%s/strategies/overview" site.BaseURL | absURL }}" class="page-close"><i class="tf-ion-close"></i></a>
       <!-- /.close -->
 
       <div class="container">
@@ -19,6 +19,7 @@
             {{.Content}}
           </div>
         </div> <!-- /.row -->
+
       </div> <!-- /.container -->
       {{ partial "page-nav.html" . }}
     </div> <!-- /.pt-tablecell -->

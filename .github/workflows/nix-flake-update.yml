@@ -36,14 +36,14 @@ jobs:
 
       - id: cachix
         name: "Enable Cachix ❄️"
-        uses: cachix/cachix-action@v12
+        uses: cachix/cachix-action@v14
         with:
           name: salt-labs
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - id: update_nix_flake
         name: Update flake.lock
-        uses: DeterminateSystems/update-flake-lock@v17
+        uses: DeterminateSystems/update-flake-lock@v21
         with:
           sign-commits: false
           gpg-fingerprint: ${{ secrets.GPG_FINGERPRINT }}

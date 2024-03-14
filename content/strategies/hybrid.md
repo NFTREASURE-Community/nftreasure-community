@@ -4,7 +4,7 @@ watermark: "Hybrid"
 description: "Why not both?"
 layout: "strategy"
 weight: 108
-prev_page: "/strategies/overview"
+prev_page: "/strategies/the-liquidity-provider"
 next_page: "/strategies/overview"
 ---
 
@@ -19,6 +19,15 @@ next_page: "/strategies/overview"
 - **Adapt to Market Changes:** Stay agile and adjust the hybrid approach as market conditions and opportunities change.
 - **Continuous Improvement:** Continuously evaluate the performance of the hybrid persona and fine-tune the strategy for optimal results.
 
-{{< image position="center" alt="Hybrid" caption="" command="Resize" title="Hybrid" webp="true" src="img/nftreasure/hybrid.png" height="400" width="400" >}}
-
+<br/>
+<div class="image-center">
+    <img
+      src="/img/nftreasure/hybrid.png"
+      alt="Hybrid"
+      class="responsive-image"
+      style="--image-width: 25%; --image-height: 25%;"
+    >
+</div>
+<br/>
+<br/>
 ---

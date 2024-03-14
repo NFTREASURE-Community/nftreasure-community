@@ -1,6 +1,6 @@
 module nftreasure-community
 
-go 1.21.7
+go 1.19
 
 require (
 	github.com/gethugothemes/hugo-modules/accordion v0.0.0-20240228105219-38c9f9c6e062 // indirect
@@ -14,6 +14,7 @@ require (
 	github.com/gethugothemes/hugo-modules/gallery-slider v0.0.0-20240228105219-38c9f9c6e062 // indirect
 	github.com/gethugothemes/hugo-modules/gzip-caching v0.0.0-20240228105219-38c9f9c6e062 // indirect
 	github.com/gethugothemes/hugo-modules/icons/font-awesome v0.0.0-20240228105219-38c9f9c6e062 // indirect
+	github.com/gethugothemes/hugo-modules/icons/themify-icons v0.0.0-20240228105219-38c9f9c6e062 // indirect
 	github.com/gethugothemes/hugo-modules/images v0.0.0-20240228105219-38c9f9c6e062 // indirect
 	github.com/gethugothemes/hugo-modules/pwa v0.0.0-20240228105219-38c9f9c6e062 // indirect
 	github.com/gethugothemes/hugo-modules/seo-tools/baidu-analytics v0.0.0-20240228105219-38c9f9c6e062 // indirect

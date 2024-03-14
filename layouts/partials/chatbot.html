@@ -131,6 +131,7 @@ async function sendMessageToServer(message) {
   // Chatbot URL
   const chatbotUrl = document.getElementById('chatbotConfig').getAttribute('data-chatbot-url');
   const sender = 'bot';
+  const friendlyMessage = "Sorry degen but it looks like you have been rugged. Here is some nerd stuff to paste into the Discord.";
 
   console.log('Chatbot URL:', chatbotUrl)
   console.log('Sending message to %s:', sender, message);
@@ -158,8 +159,8 @@ async function sendMessageToServer(message) {
       const data = await response.json();
       console.log(`${sender} has responded with:`, data);
 
-      console.log('Question:', data.message || "No question provided.");
-      console.log('Response:', data.reply || "No response provided.");
+      console.log('Question:', data.message || "No question was provided.");
+      console.log('Response:', data.reply || "No response was given.");
       console.log('Error:', data.error || "No error.");
 
       if (data.error) {
@@ -170,15 +171,15 @@ async function sendMessageToServer(message) {
 
 		} else {
 
-      console.error(`${sender} has returned an error:`, response.statusText);
-      addMessageToChat(sender, `Error: ${response.statusText}`);
+      console.error(`ERROR:`, response.statusText);
+      addMessageToChat(sender, `${friendlyMessage} ERROR: ${response.statusText}`);
 
     }
 
 	} catch (error) {
 
-    console.error(`Failed to talk to ${sender}. Error:`, error);
-    addMessageToChat(sender, `Failed to talk to ${sender}. Error: ${error}`);
+    console.error(`ERROR:`, error);
+    addMessageToChat(sender, `${friendlyMessage} ERROR: ${error}`);
 
 	}
 

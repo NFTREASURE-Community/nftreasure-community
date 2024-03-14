@@ -4,8 +4,8 @@ watermark: "The Giveaway Junkie"
 description: "Like a moth to a flame"
 layout: "strategy"
 weight: 106
-prev_page: "/strategies/overview"
-next_page: "/strategies/overview"
+prev_page: "/strategies/the-trader"
+next_page: "/strategies/the-liquidity-provider"
 ---
 
 ### The Giveaway Junkie
@@ -18,6 +18,15 @@ next_page: "/strategies/overview"
 - Regularly **rummages** through the NFTREASURE Intern's trash can, searching for hidden clues about upcoming giveaways and contests.
 - **Always** is the first to respond to giveaway tweets and ready to open a Treasure Box at a moment's notice when new clues of prizes are announced.
 
-{{< image position="center" alt="Giveaway Junkie" caption="" command="Resize" title="Giveaway Junkie" webp="true" src="img/nftreasure/giveaway_junkie.png" height="400" width="200" >}}
-
+<br/>
+<div class="image-center">
+    <img
+      src="/img/nftreasure/giveaway_junkie.png"
+      alt="Commissioner Gordon"
+      class="responsive-image"
+      style="--image-width: 25%; --image-height: 25%;"
+    >
+</div>
+<br/>
+<br/>
 ---

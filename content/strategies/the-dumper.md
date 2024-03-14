@@ -4,8 +4,8 @@ watermark: "The Dumper"
 description: "sell, sell, sell!"
 layout: "strategy"
 weight: 104
-prev_page: "/strategies/overview"
-next_page: "/strategies/overview"
+prev_page: "/strategies/the-diamond-hand"
+next_page: "/strategies/the-trader"
 ---
 
 ### The Dumper
@@ -20,6 +20,15 @@ next_page: "/strategies/overview"
 - **Consistently dump** the majority of their rewards, prioritizing short-term gains over long-term investment.
 - **Shifts** as the SMRTr LP rewards diminish, they shift their strategy to TRESr LP, seeking the most profitable opportunities.
 
-{{< image position="center" alt="Dumper" caption="" command="Resize" title="Dumper" webp="true" src="img/nftreasure/dumper.png" height="450" width="450" >}}
-
+<br/>
+<div class="image-center">
+    <img
+      src="/img/nftreasure/dumper.png"
+      alt="Dumper"
+      class="responsive-image"
+      style="--image-width: 50%; --image-height: 50%;"
+    >
+</div>
+<br/>
+<br/>
 ---

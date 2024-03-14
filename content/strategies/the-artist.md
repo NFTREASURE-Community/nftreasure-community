@@ -5,7 +5,7 @@ description: "The creative NFTREASURE hunter"
 layout: "strategy"
 weight: 101
 prev_page: "/strategies/overview"
-next_page: "/strategies/overview"
+next_page: "/strategies/commissioner-gordon"
 ---
 
 ### The Artist
@@ -20,6 +20,15 @@ next_page: "/strategies/overview"
 
 **_Dark horse:_** An Artist that pairs up with a Marketer to drive sales. The ultimate dynamic duo, like Batman and Robin, or peanut butter and jelly. Together, they'll conquer the NFTREASURE world and make a name for themselves in the digital art scene.
 
-{{< image position="center" alt="Designer" caption="" command="Resize"  title="Designer" webp="true" src="img/nftreasure/designer.png" height="400" width="200" >}}
-
+<br/>
+<div class="image-center">
+    <img
+      src="/img/nftreasure/designer.png"
+      alt="Designer"
+      class="responsive-image"
+      style="--image-width: 25%; --image-height: 25%;"
+    >
+</div>
+<br/>
+<br/>
 ---

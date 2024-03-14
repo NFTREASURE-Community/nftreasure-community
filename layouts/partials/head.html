@@ -1,0 +1,53 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ site.Title }}</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  {{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ hugo.Generator }}
+
+  {{ "<!-- theme meta -->" | safeHTML }}
+  <meta name="theme-name" content="phantom-hugo" />
+
+  <!-- plugins -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <!-- CSS Plugins -->
+  {{ range site.Params.plugins.css }}
+    {{ $cssFile := resources.Get .link }}
+    {{ if $cssFile }}
+    <!-- Internal script found, process and include it -->
+      {{ $customCSS := resources.Get $cssFile | toCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $customCSS.Permalink }}" integrity="{{ $customCSS.Data.Integrity }}" crossorigin="anonymous">
+    {{ else if findRE "^https?://" .link }}
+    <!-- External CSS, include directly -->
+    <link rel="stylesheet" href="{{ .link }}" />
+    {{ else }}
+    <!-- Internal or static CSS, include directly without processing -->
+    <link rel="stylesheet" href="{{ .link | absURL }}" />
+    {{  end }}
+  {{ end }}
+
+  <!-- Main Stylesheet -->
+  {{ $styles := resources.Get "scss/style.scss" | toCSS | minify }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
+  <!-- Custom Stylesheet -->
+  {{ $custom := resources.Get "scss/custom.scss" | toCSS | minify }}
+  <link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{{ site.Params.favicon | absURL }}" type="image/x-icon">
+  <link rel="icon" href="{{ site.Params.favicon | absURL }}" type="image/x-icon">
+
+  {{ with .Params.image }}
+  <meta property="og:image" content="{{ . | absURL }}" />
+  {{ end }}
+
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/google_analytics.html" . }}
+  {{ template "_internal/google_analytics_async.html" . }}
+
+</head>

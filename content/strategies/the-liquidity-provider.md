@@ -4,8 +4,8 @@ watermark: "The Liquidity Provider"
 description: "The bringer of wealth"
 layout: "strategy"
 weight: 107
-prev_page: "/strategies/overview"
-next_page: "/strategies/overview"
+prev_page: "/strategies/the-giveaway-junkie"
+next_page: "/strategies/hybrid"
 ---
 
 ### The Liquidity Provider
@@ -26,6 +26,15 @@ Sub-classes of this strategy include:
 
 **Diamond Hands:** This Liquidity Provider maximizes the percentage of rewards reinvested into LP, compounding their liquidity into a massive pot, and demonstrating their unwavering commitment to the NFTREASURE project.
 
-{{< image position="center" alt="Liquidity Provider" caption="" command="Resize" title="Liquidity Provider" webp="true" src="img/nftreasure/liquidity_provider.png" height="400" width="300" >}}
-
+<br/>
+<div class="image-center">
+    <img
+      src="/img/nftreasure/liquidity_provider.png"
+      alt="Liquidity Provider"
+      class="responsive-image"
+      style="--image-width: 25%; --image-height: 25%;"
+    >
+</div>
+<br/>
+<br/>
 ---

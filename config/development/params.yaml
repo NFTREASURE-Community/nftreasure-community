@@ -3,6 +3,6 @@
 ##################################################
 
 chatbot:
-  enabled: true
+  enabled: false
 
-  url: "https://localhost:8787/api"
+  url: "http://localhost:8787/api"

@@ -24,7 +24,7 @@ author_info:
 #########################
 
 skills:
-  - name: "Degenerate"
+  - name: "Degenerate (reformed)"
     percentage: "90%"
 
   - name: "Mullet"
@@ -37,7 +37,7 @@ skills:
     percentage: "100%"
 
   - name: "Math"
-    percentage: "5%"
+    percentage: "75%"
 ---
 
 Meet Ron Jay, the ultimate crypto native & reformed degenerate.

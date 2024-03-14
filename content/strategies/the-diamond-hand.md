@@ -4,8 +4,8 @@ watermark: "The Diamond Hand"
 description: "A visionary NFTREASURE hunter"
 layout: "strategy"
 weight: 103
-prev_page: "/strategies/overview"
-next_page: "/strategies/overview"
+prev_page: "/strategies/commissioner-gordon"
+next_page: "/strategies/the-dumper"
 ---
 
 ### The Diamond Hand
@@ -20,6 +20,14 @@ next_page: "/strategies/overview"
 - **Passively** earn an income printing like the US Treasury from NFTREASURE profits.
 - **Evolve** into Vishnu of the blockchain when NFTREASURE accepts a buyout offer from _Nike_ for $1 billion.
 
-{{< image position="center" alt="Diamond Hands" caption="" command="Resize" title="Diamond Hands" webp="true" src="img/nftreasure/diamond_hands.png"  height="400"  width="400" >}}
-
+<div class="image-center">
+    <img
+      src="/img/nftreasure/diamond_hands.png"
+      alt="Diamond Hands"
+      class="responsive-image"
+      style="--image-width: 25%; --image-height: 25%;"
+    >
+</div>
+<br/>
+<br/>
 ---

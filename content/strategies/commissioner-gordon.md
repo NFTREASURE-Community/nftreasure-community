@@ -4,8 +4,8 @@ watermark: "Commissioner Gordon"
 description: "Possessing a keen eye for booty."
 layout: "strategy"
 weight: 102
-prev_page: "/strategies/overview"
-next_page: "/strategies/overview"
+prev_page: "/strategies/the-artist"
+next_page: "/strategies/the-diamond-hand"
 ---
 
 ### Commissioner Gordon
@@ -20,6 +20,15 @@ In essence, Commissioner Gordon is a savvy and determined persona in the NFT wor
 - **Twitter Army:** Leveraging their network of dedicated followers, they employ a team of Twitter shills to boost engagement and drive sales for their owned NFTs, further increasing their commission earnings.
 - **Master of Timing:** With a strong grasp of analytics, Commissioner Gordon knows when to sell an NFT, strategically flipping their assets to maximize profits and avoid diminishing commissions.
 
-{{< image position="center" alt="Commissioner" caption="" command="Resize" title="Commissioner" webp="true" src="img/nftreasure/commissioner.png" height="400" width="300" >}}
-
+<br/>
+<div class="image-center">
+    <img
+      src="/img/nftreasure/commissioner.png"
+      alt="Commissioner Gordon"
+      class="responsive-image"
+      style="--image-width: 25%; --image-height: 25%;"
+    >
+</div>
+<br/>
+<br/>
 ---

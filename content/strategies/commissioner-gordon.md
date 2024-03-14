@@ -1,16 +1,14 @@
 ---
-title: "Strategy 2"
-watermark: "Strategy 2"
-description: "Strategy 2"
+title: "Commissioner Gordon"
+watermark: "Commissioner Gordon"
+description: "Possessing a keen eye for booty."
 layout: "strategy"
 weight: 102
-prev_page: "strategies/overview"
-next_page: "strategies/overview"
+prev_page: "/strategies/overview"
+next_page: "/strategies/overview"
 ---
 
 ### Commissioner Gordon
-
-_Possessing a keen eye for Booty_
 
 **Thesis:** A shrewd and ambitious individual with a keen eye for profitable opportunities in the NFT market. Despite lacking artistic skills, they aim to earn a fortune by making strategic purchases of high-value designs and earning substantial commissions.
 

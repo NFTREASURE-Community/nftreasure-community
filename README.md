@@ -2,7 +2,7 @@
 
 Welcome to the NFTREASURE community website, an **unofficial** fan-made project that showcases projects built by NFTREASURE community members.
 
-**DISCLAIMER:** _This project is in no-way officially endorsed or affiliated with [NFTreasure](https://nftreasure.com/) and is purely a fan-made project._
+**DISCLAIMER:** _This project is in no-way officially endorsed or affiliated with [NFTREASURE](https://nftreasure.com/) and is purely a fan-made project._
 
 ## Contributing
 

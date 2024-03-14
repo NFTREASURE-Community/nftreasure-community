@@ -1,18 +1,16 @@
 ---
-title: "Strategy 4"
-watermark: "Strategy 4"
-description: "Strategy 4"
+title: "The Dumper"
+watermark: "The Dumper"
+description: "sell, sell, sell!"
 layout: "strategy"
 weight: 104
-prev_page: "strategies/overview"
-next_page: "strategies/overview"
+prev_page: "/strategies/overview"
+next_page: "/strategies/overview"
 ---
 
 ### The Dumper
 
-_sell, sell, sell!_
-
-**Thesis:** A ruthless and profit-driven individual who doesn't care about the NFTreasure ecosystem or its community. Their sole focus is to extract as much value from the protocol as possible, without regard for others.
+**Thesis:** A ruthless and profit-driven individual who doesn't care about the NFTREASURE ecosystem or its community. Their sole focus is to extract as much value from the protocol as possible, without regard for others.
 
 **Actions:**
 

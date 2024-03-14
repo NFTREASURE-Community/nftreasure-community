@@ -1,16 +1,14 @@
 ---
-title: "Strategy 8"
-watermark: "Strategy 8"
-description: "Strategy 8"
+title: "Hybrid"
+watermark: "Hybrid"
+description: "Why not both?"
 layout: "strategy"
 weight: 108
-prev_page: "strategies/overview"
-next_page: "strategies/overview"
+prev_page: "/strategies/overview"
+next_page: "/strategies/overview"
 ---
 
 ### Hybrid
-
-_Why not both?_
 
 **Thesis:** Why settle for one persona when you can have the best of all?
 

@@ -1,16 +1,14 @@
 ---
-title: "Strategy 5"
-watermark: "Strategy 5"
-description: "Strategy 5"
+title: "The Trader"
+watermark: "The Trader"
+description: "A green-candle enthusiast"
 layout: "strategy"
 weight: 105
-prev_page: "strategies/overview"
-next_page: "strategies/overview"
+prev_page: "/strategies/overview"
+next_page: "/strategies/overview"
 ---
 
 ### The Trader
-
-_We're going to the moon!_
 
 **Thesis:** A skilled chart reader and market analyst who prefers the fast-paced world of trading to the more leisurely pace of DeFi games.
 

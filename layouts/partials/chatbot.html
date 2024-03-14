@@ -1,0 +1,372 @@
+
+<!-- Chatbot Configuration -->
+<div id="chatbotConfig" data-chatbot-url="{{ .Site.Params.chatbot.url }}" style="display: none;"></div>
+
+<!-- Chat Toggle Button -->
+<div id="chatbot-toggle">Chat with Ron Jay</div>
+
+<!-- Chatbot Container -->
+<div id="chatbot-container">
+
+	<!-- Chatbot Header -->
+	<div id="chatbot-header">Chat with Ron Jay</div>
+
+	<!-- Chatbot Body -->
+	<div id="chatbot-body">
+    <div id="chatbot-messages"></div>
+  </div>
+
+	<!-- Chatbot Input Container -->
+	<div id="chatbot-input-container">
+    <input type="text" id="chatbot-input" placeholder="Enter your message">
+    <button id="chatbot-send-btn">Send</button>
+  </div>
+
+</div>
+
+<!-- Chatbot Script -->
+<script>
+
+// Chatbot Toggle Button
+document.getElementById('chatbot-toggle').addEventListener('click', function() {
+
+	var chatContainer = document.getElementById('chatbot-container');
+  var chatToggle = document.getElementById('chatbot-toggle');
+
+  chatContainer.style.display = "flex";
+  chatToggle.style.display = "none";
+
+});
+
+
+// Close Chatbot on Outside Click
+document.addEventListener('click', function(e) {
+
+	var chatContainer = document.getElementById('chatbot-container');
+  var chatToggle = document.getElementById('chatbot-toggle');
+  var clickedInsideChat = chatContainer.contains(e.target) || chatToggle.contains(e.target);
+
+  if (!clickedInsideChat && chatContainer.style.display === "flex") {
+    chatContainer.style.display = "none";
+    chatToggle.style.display = "block";
+  }
+
+}, true);
+
+// Chatbot Input
+document.getElementById('chatbot-input').addEventListener('keypress', function(e) {
+
+	if (e.key === 'Enter' && !e.shiftKey) {
+
+		e.preventDefault(); // Prevent the default action to stop from submitting form
+    document.getElementById('chatbot-send-btn').click(); // Trigger click on send button
+
+	}
+
+});
+
+// Chatbot Send Button
+document.getElementById('chatbot-send-btn').addEventListener('click', async function() {
+
+    // Disable the button to prevent multiple clicks.
+    this.disabled = true;
+
+    const inputElement = document.getElementById('chatbot-input');
+    const message = inputElement.value.trim();
+    const sender = 'user';
+
+    if (message) {
+        addMessageToChat(sender, message);
+        await sendMessageToServer(message);
+        inputElement.value = '';
+    }
+
+    this.disabled = false;
+
+});
+
+// Chatbot Message adding function
+function addMessageToChat(sender, message) {
+
+  const chatMessages = document.getElementById('chatbot-messages');
+  const messageDiv = document.createElement('div');
+  const messageText = document.createElement('span');
+  const avatarImg = document.createElement('img');
+
+  // Define avatar images based on the sender
+  if (sender === 'user') {
+
+    avatarImg.src = '/img/avatars/user.png';
+
+  } else {
+
+    avatarImg.src = '/img/avatars/support.png';
+
+  }
+
+  avatarImg.classList.add('avatar');
+
+  // Spaces are not allowed in class names, replace them with hyphens
+  const senderClass = sender.replace(/\s+/g, '-').toLowerCase();
+
+  // Set classes for the message div
+  messageDiv.classList.add('chat-message', senderClass);
+
+  // Append avatar image and message text to the message div
+  messageDiv.appendChild(avatarImg);
+  messageText.textContent = message;
+  messageDiv.appendChild(messageText);
+
+  // Append the message div to the chat messages container
+  chatMessages.appendChild(messageDiv);
+
+  // Auto-scroll to the latest message
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+}
+
+// Chatbot Server Message
+async function sendMessageToServer(message) {
+
+  // Chatbot URL
+  const chatbotUrl = document.getElementById('chatbotConfig').getAttribute('data-chatbot-url');
+  const sender = 'bot';
+  const friendlyMessage = "Sorry degen but it looks like you have been rugged. Here is some nerd stuff to paste into the Discord.";
+
+  console.log('Chatbot URL:', chatbotUrl)
+  console.log('Sending message to %s:', sender, message);
+
+  // Timeout
+  const timeoutPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject('%s took too long to respond. Please try again later.', sender);
+    }, 5000);
+  });
+
+	try {
+
+    const response = await Promise.race([
+      fetch(chatbotUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: message }),
+      }),
+      timeoutPromise
+    ]);
+
+    if (response.ok) {
+
+      const data = await response.json();
+      console.log(`${sender} has responded with:`, data);
+
+      console.log('Question:', data.message || "No question was provided.");
+      console.log('Response:', data.reply || "No response was given.");
+      console.log('Error:', data.error || "No error.");
+
+      if (data.error) {
+        addMessageToChat(sender, data.error);
+      } else {
+        addMessageToChat(sender, data.reply);
+      }
+
+		} else {
+
+      console.error(`ERROR:`, response.statusText);
+      addMessageToChat(sender, `${friendlyMessage} ERROR: ${response.statusText}`);
+
+    }
+
+	} catch (error) {
+
+    console.error(`ERROR:`, error);
+    addMessageToChat(sender, `${friendlyMessage} ERROR: ${error}`);
+
+	}
+
+}
+
+</script>
+
+<style>
+
+:root {
+	--primary-color: #F0C854;
+	--light-dark: #080F20;
+	--light: #fff;
+	--text-color: #ababab;
+	--title-color: #1e2530;
+	--border-color: #eee;
+	--font-family: 'Open Sans', serif;
+}
+
+#chatbot-toggle {
+  position: fixed;
+	bottom: 20px;
+  right: 20px;
+  background-color: var(--title-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border: 10px solid transparent;
+	transition: border-color 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1050;
+  font-family: var(--font-family);
+}
+
+#chatbot-toggle:hover {
+  border-color: var(--primary-color);
+}
+
+#chatbot-container {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  width: 500px;
+  height: 600px;
+  background-color: var(--title-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  flex-direction: column;
+  z-index: 1040;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family);
+}
+
+#chatbot-header {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--title-color);
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#chatbot-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: var(--light-color);
+}
+
+#chatbot-input-container {
+  display: flex;
+  padding: 10px;
+  background-color: var(--light-color);
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--light-color);
+}
+
+#chatbot-send-btn {
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  color: var(--title-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#chatbot-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#chatbot-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message {
+    background-color: var(--light);
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    color: var(--title-color);
+    margin: 10px;
+    max-width: 70%;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+  }
+
+.chat-message.user {
+    margin-left: 0;
+    margin-right: auto;
+    align-self: flex-start;
+}
+
+.chat-message.bot {
+    margin-right: 0;
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+.chat-message.user::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    left: 100%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--title-color);
+    transform: translateY(-50%);
+}
+
+.chat-message.bot::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent var(--title-color);
+    transform: translateY(-50%);
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.chat-message.user .avatar {
+    order: -1;
+}
+
+.chat-message.bot .avatar {
+    margin-left: 5px;
+}
+
+.chat-message img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.chat-message.user img {
+  order: -1;
+}
+
+.chat-message.bot img {
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+.chat-message div {
+  max-width: 70%;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+}
+
+</style>

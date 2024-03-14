@@ -1,0 +1,53 @@
+
+// Import images module
+//
+//@import 'images';
+
+//
+// Import gallery slider module
+//
+//@import 'gallery-slider';
+
+:root {
+    --image-width: 25%;
+    --image-height: 25%;
+}
+
+// 404 page
+
+.error-content {
+  text-align: center;
+  color: #fff;
+}
+
+.error-heading {
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+}
+
+.error-subheading {
+  font-style: italic;
+  color: #ababab;
+}
+
+.error-image {
+  display: block;
+  margin: 0 auto;
+  width: 318px;
+  height: 220px;
+}
+
+// Images
+
+.image-center {
+    text-align: center;
+}
+
+.responsive-image {
+    display: block;
+    margin: 0 auto;
+    width: var(--image-width);
+    height: var(--image-height);
+    border-radius: 25px;
+    border: 10px solid #F0C854;
+}

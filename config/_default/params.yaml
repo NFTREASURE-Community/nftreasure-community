@@ -1,0 +1,47 @@
+##################################################
+# Params
+##################################################
+
+favicon: img/favicon.png
+
+logo: img/NFTREASURE.png
+
+dark_mode: true
+
+preloader: true
+
+homepage_content: "The NFTREASURE Community Website"
+
+homepage_background: "/img/banner.jpg"
+
+description: "NFTREASURE Community Website"
+
+author: "NFTREASURE Community"
+
+contact_form_action: "https://airform.io/contact@nftreasure.community"
+
+copyright: "NFTREASURE Community"
+
+plugins:
+  css:
+    - link: >-
+        https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800
+    - link: >-
+        https://fonts.googleapis.com/css?family=Jost:wght@400;700&display=swap
+    - link: css/bootstrap.min.css
+    - link: css/themefisher-fonts.min.css
+    - link: css/owl.carousel.min.css
+    - link: plugins/themify-icons/icons.css
+    #- link: plugins/glightbox/glightbox.css
+    #- link: plugins/swiper/swiper-bundle.css
+
+  js:
+    - link: js/jquery-2.2.4.min.js
+    - link: js/bootstrap.min.js
+    - link: js/isotope.pkgd.min.js
+    - link: js/jquery.nicescroll.min.js
+    - link: js/owl.carousel.min.js
+    - link: js/jquery.easing.min.js
+    #- link: js/gallery-slider.js
+    #- link: plugins/glightbox/glightbox.js
+    #- link: plugins/swiper/swiper-bundle.js

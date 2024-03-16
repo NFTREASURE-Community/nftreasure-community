@@ -3,6 +3,6 @@
 ##################################################
 
 chatbot:
-  enabled: false
+  enabled: true
 
   url: "https://chatbot.nftreasure.community/api"

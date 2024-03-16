@@ -5,4 +5,11 @@
 chatbot:
   enabled: true
 
-  url: "http://localhost:8787/api"
+  # Test
+  #url: "http://localhost:8787/api"
+
+  # OpenAI
+  url: "http://localhost:8787/api-openai"
+
+  # Mistral AI
+  #url: "http://localhost:8787/api-mistral"

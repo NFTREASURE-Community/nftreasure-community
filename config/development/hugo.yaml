@@ -10,3 +10,5 @@ disableFastRender: true
 disableLiveReload: false
 
 buildDrafts: true
+
+deleteDestinationDir: true

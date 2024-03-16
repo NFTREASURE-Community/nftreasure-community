@@ -49,7 +49,7 @@ jobs:
     steps:
       - id: wait_for_pages
         name: Wait for Cloudflare Pages (${{ matrix.os }})
-        uses: fountainhead/action-wait-for-check@v1.1.0
+        uses: fountainhead/action-wait-for-check@v1.2.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.event.pull_request.head.sha || github.sha }}

@@ -12,14 +12,17 @@
             <div class="hexagon-menu services clear">
               {{ range .Params.strategies }}
 
+              <!-- The outside border hexagon -->
               <div class="hexagon-item">
 
+                <!-- The inside border hexagon -->
                 <div class="hex-item">
                   <div></div>
                   <div></div>
                   <div></div>
                 </div>
 
+                <!-- The content hexagon with additional padding -->
                 <div class="hex-item">
                   <div></div>
                   <div></div>
@@ -50,5 +53,6 @@
       </div> <!-- /.container -->
     </div> <!-- /.pt-tablecell -->
   </div> <!-- /.pt-table -->
+
 </main> <!-- /.site-wrapper -->
 {{ end }}

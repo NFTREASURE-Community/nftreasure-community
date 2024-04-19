@@ -1,11 +1,11 @@
 ---
 ##################################################
-# Name: giphy.yaml
+# Name: thumbs.yaml
 # Description:
-#   A Workflow that post giphy pics in PRs.
+#   A Workflow that posts Thumbs Up/Down comments.
 ##################################################
 
-name: Giphy
+name: Thumbs Up/Down
 
 on:
   pull_request:
@@ -30,7 +30,7 @@ env:
 
 jobs:
   check:
-    name: Giphy status check
+    name: Thumbs Up/Down
 
     runs-on: ${{ matrix.os }}
 
@@ -41,15 +41,11 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-        python-version:
-          - "3.10"
-        poetry-version:
-          - "latest"
 
     steps:
       - id: wait_for_pages
         name: Wait for Cloudflare Pages (${{ matrix.os }})
-        uses: fountainhead/action-wait-for-check@v1.1.0
+        uses: fountainhead/action-wait-for-check@v1.2.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.event.pull_request.head.sha || github.sha }}

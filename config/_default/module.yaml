@@ -8,7 +8,6 @@ hugoVersion:
 
 imports:
   - path: github.com/gethugothemes/hugo-modules/accordion
-  - path: github.com/gethugothemes/hugo-modules/accordion
   - path: github.com/gethugothemes/hugo-modules/adsense
   - path: github.com/gethugothemes/hugo-modules/components/cookie-consent
   - path: github.com/gethugothemes/hugo-modules/components/crisp-chat

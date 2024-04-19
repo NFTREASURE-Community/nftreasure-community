@@ -3,6 +3,10 @@
 ##################################################
 
 chatbot:
-  enabled: true
+  enabled: false
 
-  url: "https://preview.chatbot.nftreasure.community/api"
+  url: "https://preview.chatbot.nftreasure.community/static/js/widget.js"
+  style: dark
+  api:
+    version: v1
+    backend: chatbot

@@ -31,7 +31,7 @@ plugins:
     - link: css/bootstrap.min.css
     - link: css/themefisher-fonts.min.css
     - link: css/owl.carousel.min.css
-    - link: plugins/themify-icons/icons.css
+    #- link: plugins/themify-icons/icons.css
     #- link: plugins/glightbox/glightbox.css
     #- link: plugins/swiper/swiper-bundle.css
 

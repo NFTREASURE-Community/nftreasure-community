@@ -1,33 +1,14 @@
+<!--
+	Chatbot Configuration
 
-<!-- Chatbot Configuration -->
-<div id="chatbotConfig" data-chatbot-url="{{ .Site.Params.chatbot.url }}" style="display: none;"></div>
+	- The style can be 'light' or 'dark'
+  - The API version is self-explanatory
+	- The API endpoint specifies which AI to use.
 
-<!-- Chat Toggle Button -->
-<div id="chatbot-toggle">Chat with Ron Jay</div>
-
-<!-- Chatbot Container -->
-<div id="chatbot-container">
-
-	<!-- Chatbot Header -->
-	<div id="chatbot-header">Chat with Ron Jay</div>
-
-	<!-- Chatbot Body -->
-	<div id="chatbot-body">
-    <div id="chatbot-messages"></div>
-  </div>
-
-	<!-- Chatbot Input Container -->
-	<div id="chatbot-input-container">
-    <input type="text" id="chatbot-input" placeholder="Enter your message">
-    <button id="chatbot-send-btn">Send</button>
-  </div>
-
-</div>
-
-<!-- Import the Chatbot Script -->
-{{ $chatbotJS := resources.Get "js/chatbot.js" | minify | fingerprint }}
-<script src="{{ $chatbotJS.Permalink }}" integrity="{{ $chatbotJS.Data.Integrity }}" crossorigin="anonymous"></script>
-
-<!-- Import the Chatbot CSS -->
-{{ $chatbotStyle := resources.Get "scss/chatbot.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $chatbotStyle.Permalink }}" integrity="{{ $chatbotStyle.Data.Integrity }}">
+-->
+<script
+  src="{{site.Params.chatbot.url}}"
+  data-chatbot-style="{{site.Params.chatbot.style}}"
+  data-chatbot-api_version="{{site.Params.chatbot.api.version}}"
+  data-chatbot-api_backend="{{site.Params.chatbot.api.backend}}"
+></script>

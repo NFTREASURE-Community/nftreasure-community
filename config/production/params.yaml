@@ -5,4 +5,8 @@
 chatbot:
   enabled: false
 
-  url: "https://chatbot.nftreasure.community/api"
+  url: "https://chatbot.nftreasure.community/static/js/widget.js"
+  style: dark
+  api:
+    version: v1
+    backend: chatbot

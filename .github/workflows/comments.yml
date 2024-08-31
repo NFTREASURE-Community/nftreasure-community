@@ -24,31 +24,6 @@ permissions:
 
 jobs:
   ##################################################
-  # Posts Giphy comments on '/giphy search_term'
-  ##################################################
-
-  giphy:
-    name: Giphy
-
-    runs-on: ${{ matrix.os }}
-
-    timeout-minutes: 5
-
-    strategy:
-      fail-fast: true
-      matrix:
-        os:
-          - ubuntu-latest
-
-    steps:
-      - id: lgtm
-        name: LGTM
-        uses: aknow2/LGTMLottery@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: "^(lgtm|LGTM|shipit|SHIPIT|ship it|SHIP IT)$"
-
-  ##################################################
   # Send a notification to Discord
   ##################################################
 

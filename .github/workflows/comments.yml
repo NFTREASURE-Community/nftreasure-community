@@ -41,12 +41,12 @@ jobs:
           - ubuntu-latest
 
     steps:
-      - id: giphy
-        name: Giphy image search
-        uses: mkramb/giphy-action@master
+      - id: lgtm
+        name: LGTM
+        uses: aknow2/LGTMLottery@v1
         with:
-          github-secret: ${{ secrets.GITHUB_TOKEN }}
-          giphy-secret: ${{ secrets.GIPHY_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: "^(lgtm|LGTM|shipit|SHIPIT|ship it|SHIP IT)$"
 
   ##################################################
   # Send a notification to Discord

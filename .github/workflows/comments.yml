@@ -9,7 +9,6 @@
 name: Comments
 
 on:
-  pull_request:
   issue_comment:
     types:
       - created

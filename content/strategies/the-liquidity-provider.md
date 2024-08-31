@@ -10,15 +10,19 @@ next_page: "/strategies/hybrid"
 
 ### The Liquidity Provider
 
-**Thesis:** A time-constrained, long-term thinker who believes in NFTREASURE's potential to become self-sustaining and profitable. Despite their busy schedule, they aim to passively accumulate $TRESR earning their rewards as a liquidity provider.
+#### Thesis
 
-**Actions:**
+A time-constrained, long-term thinker who believes in NFTREASURE's potential to become self-sustaining and profitable.
 
-- **Purchases** purchases SMRTr, TRESR, and AVAX tokens to create liquidity pairs.
-- **Provides** liquidity to the SMRTr/AVAX pair, earning TRESR as rewards.
+Despite their busy schedule, they aim to passively accumulate $TRESR earning their rewards as a liquidity provider.
+
+#### Actions
+
+- **Purchases** purchases SMRTR, TRESR, and AVAX tokens to create liquidity pairs.
+- **Provides** liquidity to the SMRTR/AVAX pair, earning TRESR as rewards.
 - **Provides** liquidity to the TRESR/AVAX pair, further increasing their TRESR rewards.
 - **Reinvests** a percentage of rewards earned back into the TRESR/AVAX LP, compounding their earnings over time.
-- **Shifts** as the SMRTr LP rewards diminish, they gradually shift their focus to the TRESr LP, maximizing their long-term gains.
+- **Shifts** as the SMRTR LP rewards diminish, they gradually shift their focus to the TRESR LP, maximizing their long-term gains.
 
 Sub-classes of this strategy include:
 

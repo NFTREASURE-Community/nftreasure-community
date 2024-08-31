@@ -10,9 +10,11 @@ next_page: "/strategies/the-liquidity-provider"
 
 ### The Giveaway Junkie
 
-**Thesis:** A prize-hunting, treasure-seeking enthusiast who thrives on the thrill of winning giveaways and contests. Oxygen is optional; the rush of victory is their true sustenance.
+#### Thesis
 
-**Actions:**
+A prize-hunting, treasure-seeking enthusiast who thrives on the thrill of winning giveaways and contests. Oxygen is optional; the rush of victory is their true sustenance.
+
+#### Actions
 
 - Keeps a **keen-eye** on every NFTREASURE-related tweet, with notifications on for any [@0xNFTREASURE](https://twitter.com/0xNFTreasure) post.
 - Regularly **rummages** through the NFTREASURE Intern's trash can, searching for hidden clues about upcoming giveaways and contests.

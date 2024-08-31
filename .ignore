@@ -15,9 +15,16 @@ themes/
 ## Ignore assets like images and pdf.
 
 assets/
+static/
 
 ## Ignore generated files outside of my control
 
 .devenv.flake.nix
 .devenv/
 .direnv/
+
+## Ignore vendored dependencies
+
+\_vendor/
+themes/
+vendor/

@@ -1,5 +1,14 @@
 # Images make prettier sad.
 assets/
+static/
 
 # Ignore themes
 themes/
+
+# Ignore vendor
+_vendor/
+vendor/
+
+# HACK: ignore all HTML files
+# pettier is terrible with go templates
+**/*.html

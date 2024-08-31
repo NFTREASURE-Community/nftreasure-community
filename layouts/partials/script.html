@@ -4,22 +4,18 @@
 {{ end }}
 
 <!-- JS Plugins + Main script -->
-{{ range site.Params.plugins.js }}
-  {{ $script := resources.Get .link }}
-  {{ if $script }}
-    <!-- Internal script found, process and include it -->
-    {{ $minified := $script | minify }}
-    {{ $fingerprinted := $minified | fingerprint }}
-    <script src="{{ $fingerprinted.Permalink }}" defer></script>
-  {{ else if findRE "^https?://" .link }}
-    <!-- External script, include directly -->
-    <script src="{{ .link }}" defer></script>
-  {{ else }}
-    <!-- Script not found, output an error or warning in the console or logs -->
-    {{ warnf "Script not found in assets, serving from static dir: %s" .link }}
-    <script src="{{ .link | absURL }}" defer></script>
-  {{ end }}
-{{ end }}
+{{ range site.Params.plugins.js }} {{ $script := resources.Get .link }} {{ if $script }}
+<!-- Internal script found, process and include it -->
+{{ $minified := $script | minify }} {{ $fingerprinted := $minified | fingerprint }}
+<script src="{{ $fingerprinted.Permalink }}" defer></script>
+{{ else if findRE "^https?://" .link }}
+<!-- External script, include directly -->
+<script src="{{ .link }}" defer></script>
+{{ else }}
+<!-- Script not found, output an error or warning in the console or logs -->
+{{ warnf "Script not found in assets, serving from static dir: %s" .link }}
+<script src="{{ .link | absURL }}" defer></script>
+{{ end }} {{ end }}
 
 <!-- Main Script -->
 {{ $script := resources.Get "js/script.js" | minify }}

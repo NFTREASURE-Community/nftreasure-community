@@ -43,13 +43,10 @@ jobs:
     steps:
       - id: giphy
         name: Giphy image search
-        uses: IAmHughes/giphy-generator@v1.0.0
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          GIPHY_TOKEN: "${{ secrets.GIPHY_TOKEN }}"
+        uses: mkramb/giphy-action@master
         with:
-          rating: "PG-13" # G, PG, PG-13, R
-          lang: "en"
+          github-secret: ${{ secrets.GITHUB_TOKEN }}
+          giphy-secret: ${{ secrets.GIPHY_TOKEN }}
 
   ##################################################
   # Send a notification to Discord
@@ -73,8 +70,9 @@ jobs:
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_DISCORD }}
           PING: "@CI"
-          MESSAGE: >
+          MESSAGE: |
             The ${{ github.event_name }} event was triggered in the ${{ github.repository }} repository.
+
             The comment is available to view [here](${{ github.event.comment.html_url }})
         run: |
           sudo apt install jq --yes

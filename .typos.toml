@@ -1,0 +1,22 @@
+[default]
+
+locale = "en-au"
+
+extend-ignore-re = [
+    "TRESR",
+    "SMRTR",
+]
+
+[files]
+
+ignore-vcs = true
+
+extend-exclude = [
+  ".git",
+  "_vendor",
+  "go.mod",
+  "go.sum",
+  "static",
+  "themes",
+  "vendor",
+]

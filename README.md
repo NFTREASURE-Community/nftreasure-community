@@ -50,6 +50,18 @@ hugo mod get -u ./...
 hugo mod vendor
 ```
 
+## Keys
+
+To update the key images;
+
+```bash
+pushd static/img/keys
+
+./download.sh
+
+popd
+```
+
 ## CI
 
 ### GitHub Actions

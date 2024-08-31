@@ -86,6 +86,7 @@ in {
         fail_fast = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -93,6 +94,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -100,6 +102,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -107,6 +110,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -114,6 +118,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -125,6 +130,7 @@ in {
         enable = false;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -132,6 +138,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -139,17 +146,23 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
       editorconfig-checker = {
         enable = true;
+        excludes = [
+          "vendor/"
+          "themes/"
+        ];
       };
 
       hadolint = {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -158,13 +171,14 @@ in {
         settings = {
           configuration = {
             MD013 = {
-              line_length = 180;
+              line_length = 240;
             };
             MD033 = false;
           };
         };
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -172,6 +186,7 @@ in {
         enable = false;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -179,6 +194,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -186,13 +202,20 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
+        settings = {
+          no-bracket-spacing = true;
+          print-width = 120;
+          allow-parens = "always";
+        };
       };
 
       pretty-format-json = {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -200,6 +223,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -207,6 +231,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -214,6 +239,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -221,6 +247,7 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
@@ -228,13 +255,17 @@ in {
         enable = true;
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
 
       typos = {
         enable = true;
         excludes = [
+          "_vendor/"
           "vendor/"
+          "themes/"
+          "static/"
         ];
       };
 
@@ -250,6 +281,7 @@ in {
         };
         excludes = [
           "vendor/"
+          "themes/"
         ];
       };
     };

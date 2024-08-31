@@ -10,14 +10,18 @@ next_page: "/strategies/the-diamond-hand"
 
 ### Commissioner Gordon
 
-**Thesis:** A shrewd and ambitious individual with a keen eye for profitable opportunities in the NFT market. Despite lacking artistic skills, they aim to earn a fortune by making strategic purchases of high-value designs and earning substantial commissions.
+#### Thesis
+
+A shrewd and ambitious individual with a keen eye for profitable opportunities in the NFT market.
+
+Despite lacking artistic skills, they aim to earn a fortune by making strategic purchases of high-value designs and earning substantial commissions.
 
 In essence, Commissioner Gordon is a savvy and determined persona in the NFT world, using their market knowledge and network to turn a profit without needing artistic talent.
 
-**Actions:**
+#### Actions
 
-- **Market Analysis:** Commissioner Gordon diligently researches sales data to identify NFTs with the highest commission potential, ensuring they invest in designs that will yield the most significant returns.
-- **Twitter Army:** Leveraging their network of dedicated followers, they employ a team of Twitter shills to boost engagement and drive sales for their owned NFTs, further increasing their commission earnings.
+- **Market Analysis:** Commissioner Gordon diligently researches sales data to identify NFTs with the highest commission potential, ensuring they invest in designs that will yield the most returns.
+- **X Army:** Leveraging their network of dedicated followers, they employ a team to boost engagement and drive sales for their owned NFTs, further increasing their commission earnings.
 - **Master of Timing:** With a strong grasp of analytics, Commissioner Gordon knows when to sell an NFT, strategically flipping their assets to maximize profits and avoid diminishing commissions.
 
 <br/>

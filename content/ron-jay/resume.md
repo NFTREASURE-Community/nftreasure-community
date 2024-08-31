@@ -12,11 +12,9 @@ next_page: "/contact"
 #########################
 
 educations:
-
   title: "Education"
 
   academy:
-
     - icon: "tf-documents5"
       name: "School of Hard Knocks"
       duration: "2013 - 2014"
@@ -37,11 +35,9 @@ educations:
 #########################
 
 experiences:
-
   title: "Experience"
 
   experience:
-
     - icon: "tf-documents5"
       name: "NFTREASURE"
       duration: "2024 - Present"
@@ -61,5 +57,4 @@ experiences:
       name: "Got Rekt in the 2021 Olympus DAO fork season"
       duration: "2021"
       description: "A humbling experience that taught me the importance of risk management and the art of the bounce-back (and how to cry into a digital wallet)"
-
 ---

@@ -4,16 +4,12 @@
   <div class="pt-table">
     <div class="pt-tablecell page-works relative">
       <!-- .close -->
-      <a href="{{ site.BaseURL }}" class="page-close"
-        ><i class="tf-ion-close"> </i
-      ></a>
+      <a href="{{ site.BaseURL }}" class="page-close"><i class="tf-ion-close"> </i></a>
       <!-- /.close -->
 
       <div class="container">
         <div class="row">
-          <div
-            class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8"
-          >
+          <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
             {{ partial "page-header.html" . }}
           </div>
         </div>
@@ -23,13 +19,10 @@
           <div class="col-xs-12">
             <ul class="filter list-inline">
               <li><a href="#" class="active" data-filter="*">All</a></li>
-              {{ $categories := slice }} {{ range .Params.keys }} {{ range
-              .categories }} {{ $categories = $categories | append . }} {{ end
-              }} {{ end }} {{ range ( $categories | uniq ) }}
+              {{ $categories := slice }} {{ range .Params.keys }} {{ range .categories }} {{ $categories = $categories |
+              append . }} {{ end }} {{ end }} {{ range ( $categories | uniq ) }}
               <li>
-                <a href="#" data-filter=".{{ . | anchorize }}"
-                  >{{ . | humanize }}</a
-                >
+                <a href="#" data-filter=".{{ . | anchorize }}">{{ . | humanize }}</a>
               </li>
               {{ end }}
             </ul>
@@ -38,15 +31,11 @@
 
         <div class="row isotope-gutter">
           {{ range .Params.keys }}
-          <div
-            class="col-xs-12 col-sm-6 col-md-4 {{range .categories}}{{ . | anchorize }} {{end}}"
-          >
+          <div class="col-xs-12 col-sm-6 col-md-4 {{range .categories}}{{ . | anchorize }} {{end}}">
             <figure class="works-item">
               <img src="{{ .image | absURL }}" alt="" />
               <div class="overlay">
-                <a href="{{ .image | absURL }}" target="_blank">
-                  <img src="{{ .image | absURL }}" alt=""
-                /></a>
+                <a href="{{ .image | absURL }}" target="_blank"> <img src="{{ .image | absURL }}" alt="" /></a>
               </div>
               <figcaption class="works-inner">
                 <h4>{{ .name | markdownify }}</h4>

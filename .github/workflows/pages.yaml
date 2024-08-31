@@ -185,6 +185,11 @@ jobs:
   check:
     name: PR Status Checks
 
+    if: |
+      github.event_name == 'pull_request' &&
+      github.event.action != 'ready_for_review' &&
+      github.event.action != 'review_requested'
+
     runs-on: ${{ matrix.os }}
 
     timeout-minutes: 30
@@ -201,7 +206,6 @@ jobs:
       - name: PR Status Giphy
         id: pr-status-giphy
         uses: dgteixeira/pr-status-giphy-action@v2
-        if: github.event_name == 'pull_request'
         env:
           GIPHY_API_KEY: ${{ secrets.GIPHY_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

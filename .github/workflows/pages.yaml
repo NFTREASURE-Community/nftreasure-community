@@ -92,18 +92,21 @@ jobs:
       - id: hugo_modules
         name: Download Hugo modules
         run: |
+          hugo mod clean
+
           if [[ -f package.json ]]; then
             echo "Running npm install"
             npm install
           fi
+
           if [[ -f "go.mod" ]]; then
-            echo "Downloading Hugo go modules"
+            echo "Downloading go modules"
             go mod download -x
           else
             echo "No go.mod file found"
           fi
+
           echo "Downloading Hugo modules"
-          hugo mod clean
           hugo mod get ./...
           hugo mod graph
 

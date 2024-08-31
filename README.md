@@ -20,6 +20,8 @@ Local development instructions for working with this repository.
 - Install the dependencies
 
 ```bash
+go mod download -x
+
 hugo mod clean
 hugo mod get
 hugo mod tidy

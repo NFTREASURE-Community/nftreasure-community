@@ -39,7 +39,7 @@ env:
   BRANCH_NAME_CURRENT: ${{ github.head_ref || github.ref_name }}
   BRANCH_NAME_DEFAULT: ${{ github.event.repository.default_branch }}
 
-  HUGO_VERSION: 0.123.8
+  HUGO_VERSION: 0.124.1
 
   PAGES_PROJECT_NAME: website-nftreasure-community
 
@@ -83,6 +83,7 @@ jobs:
       - id: hugo_cleanup
         name: Remove unwanted Hugo files before build
         run: |
+          rm -f themes/*/exampleSite || echo "Failed to remove exampleSite from theme"
           rm -f themes/*/content/post/* || echo "Failed to remove posts from theme"
           rm -f themes/*/data/authors/* || echo "Failed to remove authors from theme"
           rm -rf assets/images/backup || echo "Failed to remove extra images"
@@ -96,13 +97,12 @@ jobs:
             npm install
           fi
           if [[ -f "go.mod" ]]; then
-            echo "Downloading Hugo go modules"
+            echo "Downloading go modules"
             go mod download -x
           else
             echo "No go.mod file found"
           fi
           echo "Downloading Hugo modules"
-          hugo mod clean
           hugo mod get ./...
           hugo mod graph
 

@@ -4,10 +4,12 @@ watermark: "Keys"
 description: "The amazing NFTREASURE artwork"
 layout: "keys"
 weight: 99
-prev_page: "/ron-jay/who"
-next_page: "/contact"
+prev_page: "/"
+next_page: "/strategies/overview"
 
 # There are 150 levels of keys, each with unique art.
+# All art is created by [@ventures_squad](https://x.com/ventures_squad)
+
 keys:
   - name: "Key 001"
     image: "/img/keys/key-001.jpg"
@@ -64,11 +66,6 @@ keys:
     categories: ["Keys"]
     content: "NFKey level 011"
 
-  - name: "Key 012"
-    image: "/img/keys/key-012.jpg"
-    categories: ["Keys"]
-    content: "NFKey level 012"
-
   - name: "Key 013"
     image: "/img/keys/key-013.jpg"
     categories: ["Keys"]
@@ -118,31 +115,6 @@ keys:
     image: "/img/keys/key-022.jpg"
     categories: ["Keys"]
     content: "NFKey level 022"
-
-  - name: "Key 023"
-    image: "/img/keys/key-023.jpg"
-    categories: ["Keys"]
-    content: "NFKey level 023"
-
-  - name: "Key 024"
-    image: "/img/keys/key-024.jpg"
-    categories: ["Keys"]
-    content: "NFKey level 024"
-
-  - name: "Key 025"
-    image: "/img/keys/key-025.jpg"
-    categories: ["Keys"]
-    content: "NFKey level 025"
-
-  - name: "Key 026"
-    image: "/img/keys/key-026.jpg"
-    categories: ["Keys"]
-    content: "NFKey level 026"
-
-  - name: "Key 027"
-    image: "/img/keys/key-027.jpg"
-    categories: ["Keys"]
-    content: "NFKey level 027"
 
   - name: "Key 028"
     image: "/img/keys/key-028.jpg"
@@ -258,4 +230,234 @@ keys:
     image: "/img/keys/key-050.jpg"
     categories: ["Keys"]
     content: "NFKey level 050"
+
+  - name: "Key 051"
+    image: "/img/keys/key-051.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 051"
+
+  - name: "Key 052"
+    image: "/img/keys/key-052.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 052"
+
+  - name: "Key 053"
+    image: "/img/keys/key-053.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 053"
+
+  - name: "Key 054"
+    image: "/img/keys/key-054.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 054"
+
+  - name: "Key 055"
+    image: "/img/keys/key-055.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 055"
+
+  - name: "Key 056"
+    image: "/img/keys/key-056.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 056"
+
+  - name: "Key 057"
+    image: "/img/keys/key-057.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 057"
+
+  - name: "Key 058"
+    image: "/img/keys/key-058.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 058"
+
+  - name: "Key 059"
+    image: "/img/keys/key-059.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 059"
+
+  - name: "Key 060"
+    image: "/img/keys/key-060.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 060"
+
+  - name: "Key 061"
+    image: "/img/keys/key-061.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 061"
+
+  - name: "Key 062"
+    image: "/img/keys/key-062.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 062"
+
+  - name: "Key 063"
+    image: "/img/keys/key-063.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 063"
+
+  - name: "Key 064"
+    image: "/img/keys/key-064.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 064"
+
+  - name: "Key 065"
+    image: "/img/keys/key-065.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 065"
+
+  - name: "Key 066"
+    image: "/img/keys/key-066.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 066"
+
+  - name: "Key 067"
+    image: "/img/keys/key-067.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 067"
+
+  - name: "Key 068"
+    image: "/img/keys/key-068.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 068"
+
+  - name: "Key 069"
+    image: "/img/keys/key-069.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 069"
+
+  - name: "Key 070"
+    image: "/img/keys/key-070.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 070"
+
+  - name: "Key 071"
+    image: "/img/keys/key-071.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 071"
+
+  - name: "Key 072"
+    image: "/img/keys/key-072.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 072"
+
+  - name: "Key 073"
+    image: "/img/keys/key-073.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 073"
+
+  - name: "Key 074"
+    image: "/img/keys/key-074.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 074"
+
+  - name: "Key 075"
+    image: "/img/keys/key-075.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 075"
+
+  - name: "Key 076"
+    image: "/img/keys/key-076.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 076"
+
+  - name: "Key 077"
+    image: "/img/keys/key-077.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 077"
+
+  - name: "Key 078"
+    image: "/img/keys/key-078.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 078"
+
+  - name: "Key 079"
+    image: "/img/keys/key-079.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 079"
+
+  - name: "Key 080"
+    image: "/img/keys/key-080.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 080"
+
+  - name: "Key 081"
+    image: "/img/keys/key-081.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 081"
+
+  - name: "Key 082"
+    image: "/img/keys/key-082.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 082"
+
+  - name: "Key 083"
+    image: "/img/keys/key-083.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 083"
+
+  - name: "Key 084"
+    image: "/img/keys/key-084.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 084"
+
+  - name: "Key 085"
+    image: "/img/keys/key-085.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 085"
+
+  - name: "Key 086"
+    image: "/img/keys/key-086.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 086"
+
+  - name: "Key 087"
+    image: "/img/keys/key-087.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 087"
+
+  - name: "Key 088"
+    image: "/img/keys/key-088.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 088"
+
+  - name: "Key 089"
+    image: "/img/keys/key-089.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 089"
+
+  - name: "Key 090"
+    image: "/img/keys/key-090.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 090"
+
+  - name: "Key 091"
+    image: "/img/keys/key-091.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 091"
+
+  - name: "Key 092"
+    image: "/img/keys/key-092.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 092"
+
+  - name: "Key 093"
+    image: "/img/keys/key-093.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 093"
+
+  - name: "Key 094"
+    image: "/img/keys/key-094.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 094"
+
+  - name: "Key 095"
+    image: "/img/keys/key-095.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 095"
+
+  - name: "Key 096"
+    image: "/img/keys/key-096.jpg"
+    categories: ["Keys"]
+    content: "NFKey level 096"
 ---

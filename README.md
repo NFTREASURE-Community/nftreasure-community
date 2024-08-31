@@ -10,32 +10,21 @@ Contributions are welcome and encouraged! 🥳
 
 ## Links
 
-- [Staging](https://staging.nftreasure.community)
+- [Preview](https://preview.nftreasure.community)
 - [Production](https://nftreasure.community)
 
 ## Development
 
 Local development instructions for working with this repository.
 
-- Ensure the submodules are up-to-date
-
-```bash
-# First time setup
-git submodule update --init --recursive
-
-# Future updates
-git submodule update --recursive --remote
-```
-
 - Install the dependencies
 
 ```bash
-npm install
-
-go mod download -x
-
 hugo mod clean
+go mod download -x
+hugo mod get ./...
 hugo mod tidy
+hugo mod vendor
 hugo mod graph
 ```
 
@@ -56,23 +45,9 @@ open http://localhost:1313/
 - To update dependencies
 
 ```bash
-# Update development dependencies
-npm update --save-dev
-
-# Test...
-
-# Update production dependencies
-npm update --save-prod
-
-# Update Workers dependencies
-npm --prefix workers-site update --save-dev
-npm --prefix workers-site update --save-prod
-
 # Update Go
-hugo mod clean
 hugo mod get -u ./...
-hugo mod tidy
-hugo mod graph
+hugo mod vendor
 ```
 
 ## CI

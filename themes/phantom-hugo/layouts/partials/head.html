@@ -10,7 +10,7 @@
 
   {{ "<!-- theme meta -->" | safeHTML }}
   <meta name="theme-name" content="phantom-hugo" />
-  
+
   <!-- plugins -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   {{ range site.Params.plugins.css }}
@@ -30,6 +30,5 @@
   {{ end }}
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/google_analytics.html" . }}
-  {{ template "_internal/google_analytics_async.html" . }}
 
 </head>

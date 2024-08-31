@@ -16,7 +16,7 @@ main:
 
   - name: Daycare
     pre: tf-ion-home
-    url: https://nftreasure.gitlab.io/daycare-v4/
+    url: https://nftreasure.gitlab.io/daycare-v5/
     weight: 3
 
   - name: Diamond Hands

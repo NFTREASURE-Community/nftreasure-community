@@ -30,10 +30,6 @@ git submodule update --recursive --remote
 - Install the dependencies
 
 ```bash
-npm install
-
-go mod download -x
-
 hugo mod clean
 hugo mod tidy
 hugo mod graph
@@ -56,18 +52,6 @@ open http://localhost:1313/
 - To update dependencies
 
 ```bash
-# Update development dependencies
-npm update --save-dev
-
-# Test...
-
-# Update production dependencies
-npm update --save-prod
-
-# Update Workers dependencies
-npm --prefix workers-site update --save-dev
-npm --prefix workers-site update --save-prod
-
 # Update Go
 hugo mod clean
 hugo mod get -u ./...

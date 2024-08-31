@@ -160,6 +160,7 @@ in {
             MD013 = {
               line_length = 180;
             };
+            MD033 = false;
           };
         };
         excludes = [

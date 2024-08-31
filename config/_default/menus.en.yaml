@@ -2,8 +2,8 @@
 # Menus (English)
 ##################################################
 
-# Top row (4)
 main:
+  # Top row (4)
   - name: Calculator
     pre: tf-ion-calculator
     url: https://nftreasure.gitlab.io/calculator/
@@ -19,12 +19,12 @@ main:
     url: https://nftreasure.gitlab.io/daycare-v5/
     weight: 3
 
-  - name: Diamond Hands
-    pre: tf-ion-android-hand
-    url: https://www.smarterswap.xyz/search
+  - name: Keys
+    pre: tf-key
+    url: /keys
     weight: 4
 
-  # Middle row (3)
+  # Bottom row (3)
   - name: Strategies
     pre: tf-ion-android-bulb
     url: strategies/overview
@@ -35,16 +35,7 @@ main:
     url: ron-jay/who
     weight: 6
 
-    # About     7
-    # Resume    8
-
-  #- name: Keys
-  #  pre: tf-key
-  #  url: keys/
-  #  weight: 9
-
-  # Bottom row (2)
   - name: Contact
     pre: tf-envelope1
     url: contact/
-    weight: 10
+    weight: 7

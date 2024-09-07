@@ -95,7 +95,7 @@ jobs:
 
       - id: create_pull_request
         name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7-rc
+        uses: peter-evans/create-pull-request@v7.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "Update devenv.lock"

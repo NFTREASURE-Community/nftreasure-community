@@ -25,11 +25,9 @@ in {
   cachix = {
     pull = [
       "pre-commit-hooks"
-      "salt-labs"
+      "nftreasure-community"
     ];
-    push = [
-      "salt-labs"
-    ];
+    push = "nftreasure-community";
   };
 
   devenv = {

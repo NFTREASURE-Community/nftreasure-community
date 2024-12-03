@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 clear
-
 set -euo pipefail
 
 ##################################################
@@ -11,26 +10,43 @@ set -euo pipefail
 LOG_FILE="keys.log"
 CONFIG_FILE="keys.yaml"
 
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
 ##################################################
 # Functions
 ##################################################
 
-function log {
+function log_file() {
 	echo "$1" >>"$LOG_FILE"
 }
 
-function message() {
-	echo -e "\e[1;32m$1\e[0m"
+function log_header() {
+	MESSAGE=$1
+	echo -e "----------------------------------------"
+	echo -e "${YELLOW}$MESSAGE${NC}"
+	echo -e "----------------------------------------"
 }
 
-function warning() {
-	echo -e "\e[1;33m$1\e[0m"
-	log "$1"
+function log_info() {
+	MESSAGE=$1
+	echo -e "${GREEN}$MESSAGE${NC}"
+	log_file "$MESSAGE"
 }
 
-function error() {
-	echo -e "\e[1;31m$1\e[0m"
-	log "$1"
+function log_warning() {
+	MESSAGE=$1
+	echo -e "${YELLOW}$MESSAGE${NC}"
+	log_file "$MESSAGE"
+}
+
+function log_error() {
+	MESSAGE=$1
+	echo -e "${RED}$MESSAGE${NC}"
+	log_file "$MESSAGE"
 }
 
 function key_check() {
@@ -62,7 +78,7 @@ function key_download() {
 		"--header"
 		"Origin: https://game.nftreasure.com"
 		"--location"
-		"https://assets.nftreasure.com/images/keys/thumb-Key%2$KEY.jpg"
+		"https://assets.nftreasure.com/images/keys/thumb-Key%20$KEY.jpg"
 		"--output"
 		"key-$KEY.jpg"
 	)
@@ -83,7 +99,6 @@ function key_config() {
 		    image: "/img/keys/key-$KEY.jpg"
 		    categories: ["Keys"]
 		    content: "NFKey level $KEY"
-
 	EOF
 
 }
@@ -91,6 +106,8 @@ function key_config() {
 ##################################################
 # Main
 ##################################################
+
+log_header "Processing all keys..."
 
 # Remove the log
 rm -f "$LOG_FILE" || true
@@ -106,27 +123,28 @@ for KEY in $(seq -f "%03g" 001 150); do
 
 	ADD_KEY=FALSE
 
-	message "Checking key $KEY"
+	log_info "Checking key $KEY"
 	if key_check "$KEY"; then
 
 		# Nothing to do, key is already downloaded.
 		ADD_KEY=TRUE
-		message "Key $KEY already exists"
+		log_info "\tKey $KEY already exists"
 
 	else
 
 		# Try and download the key.
 		key_download "$KEY" || {
-			warning "Failed to download key $KEY!"
+			log_warning "\tFailed to download key $KEY!"
 			rm -f "key-$KEY.jpg" || true
 			continue
 		}
+		log_info "\tDownloaded key $KEY"
 
 		# Check the key again to ensure it was downloaded ok.
 		if key_check "$KEY"; then
 			ADD_KEY=TRUE
 		else
-			error "Failed to download key $KEY!"
+			log_error "\tFailed to download key $KEY!"
 			rm -f "key-$KEY.jpg" || true
 			continue
 		fi
@@ -136,7 +154,7 @@ for KEY in $(seq -f "%03g" 001 150); do
 	if [[ ${ADD_KEY} == "TRUE" ]]; then
 
 		key_config "$KEY" || {
-			error "Failed to add key $KEY to config!"
+			log_error "\tFailed to add key $KEY to config!"
 			continue
 		}
 
@@ -144,5 +162,5 @@ for KEY in $(seq -f "%03g" 001 150); do
 
 done
 
-message "Finished!"
+log_header "Finished processing all keys!"
 exit 0

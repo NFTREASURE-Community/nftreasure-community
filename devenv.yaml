@@ -23,7 +23,7 @@ permittedInsecurePackages: []
 imports: []
 
 clean:
-  enabled: true
+  enabled: false
   keep:
     - EDITOR
     - USER
